@@ -87,6 +87,31 @@ def restore_completed_runs(archive_path, output):
     return count
 
 
+def restore_completed_tree(source, output):
+    """Restore completed runs when Kaggle extracted the previous evidence zip."""
+    source, output = Path(source), Path(output)
+    count = 0
+    for summary in (source / "runs").glob("*/seed*/summary.json"):
+        directory = summary.parent
+        if not (directory / "config.json").is_file() or not (directory / "best.pt").is_file():
+            continue
+        for path in directory.rglob("*"):
+            if path.is_file():
+                target = output / path.relative_to(source)
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(path, target)
+                count += 1
+        experiment, seed = directory.parent.name, directory.name
+        for pattern in (f"curves/{experiment}_{seed}.*", f"predictions/{experiment}_{seed}_*"):
+            for path in source.glob(pattern):
+                if path.is_file():
+                    target = output / path.relative_to(source)
+                    target.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.copy2(path, target)
+                    count += 1
+    return count
+
+
 def _config(data, output, **kw):
     return train.Config(images_dir=str(data / "images"), labels_dir=str(data / "labels"),
                         out_dir=str(output / "runs"), pred_dir=str(output / "predictions"),

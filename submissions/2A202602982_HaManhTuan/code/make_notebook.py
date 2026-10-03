@@ -38,15 +38,31 @@ print('Verified 17,509 images and original fold-0 labels')"""))
 cells.append(nbf.v4.new_code_cell("""from pathlib import Path
 import sys
 sys.path.insert(0, '/kaggle/working/submissions/2A202602982_HaManhTuan/code')
-from run_lab import restore_completed_runs
-archives = list(Path('/kaggle/input').rglob('deepweeds_evidence.zip'))
-if len(archives) > 1:
-    raise RuntimeError(f'Multiple evidence archives attached: {archives}')
+from run_lab import restore_completed_runs, restore_completed_tree
+import zipfile
+input_root = Path('/kaggle/input')
+archives = []
+for candidate in input_root.rglob('*.zip'):
+    try:
+        with zipfile.ZipFile(candidate) as archive:
+            if 'runs/B01/seed0/summary.json' in archive.namelist():
+                archives.append(candidate)
+    except zipfile.BadZipFile:
+        pass
 if archives:
-    restored = restore_completed_runs(archives[0], '/kaggle/working/lab_output')
-    print(f'Restored {restored} completed-run files from {archives[0]}')
+    chosen = sorted(archives)[-1]
+    restored = restore_completed_runs(chosen, '/kaggle/working/lab_output')
+    print(f'Restored {restored} completed-run files from {chosen}')
 else:
-    print('No previous evidence archive attached; all runs will start normally')"""))
+    summaries = [p for p in input_root.rglob('summary.json')
+                 if p.parent.name == 'seed0' and p.parent.parent.name == 'B01'
+                 and p.parent.parent.parent.name == 'runs']
+    if summaries:
+        chosen = sorted(summaries)[-1].parents[3]
+        restored = restore_completed_tree(chosen, '/kaggle/working/lab_output')
+        print(f'Restored {restored} completed-run files from extracted input {chosen}')
+    else:
+        print('No previous evidence found in Kaggle Input; all runs will start normally')"""))
 cells.append(nbf.v4.new_code_cell("""import subprocess, sys
 script = '/kaggle/working/submissions/2A202602982_HaManhTuan/code/run_lab.py'
 os.environ['DEEPWEEDS_DATA'] = '/kaggle/working/data'

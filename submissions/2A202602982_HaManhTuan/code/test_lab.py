@@ -123,6 +123,19 @@ class LabTests(unittest.TestCase):
             run_lab.restore_completed_runs(archive, output)
             self.assertEqual(run_lab._load_result(cfg)["macro_f1_val"], 0.785)
 
+    def test_restore_extracted_evidence_tree(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            source, output = Path(tmp) / "source", Path(tmp) / "out"
+            folder = source / "runs/B01/seed0"
+            folder.mkdir(parents=True)
+            for name in ("config.json", "summary.json", "best.pt"):
+                (folder / name).write_text(name)
+            (source / "curves").mkdir()
+            (source / "curves/B01_seed0.png").write_text("curve")
+            self.assertEqual(run_lab.restore_completed_tree(source, output), 4)
+            self.assertTrue((output / "runs/B01/seed0/best.pt").exists())
+            self.assertTrue((output / "curves/B01_seed0.png").exists())
+
 
 if __name__ == "__main__":
     unittest.main()
