@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+runs/
+lab_output/
+deepweeds_evidence.zip
