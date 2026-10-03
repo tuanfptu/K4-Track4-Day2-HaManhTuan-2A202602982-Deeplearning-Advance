@@ -3,6 +3,7 @@ import unittest
 import os
 import json
 import tempfile
+import zipfile
 from dataclasses import asdict
 from pathlib import Path
 
@@ -94,6 +95,33 @@ class LabTests(unittest.TestCase):
                               scheduler, SkippedStep(), train.Config(), torch.device("cpu"))
         self.assertEqual(scheduler.last_epoch, 0)
         self.assertEqual(optimizer.param_groups[0]["lr"], 0.1)
+
+    def test_restore_only_completed_runs(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            archive = Path(tmp) / "evidence.zip"
+            with zipfile.ZipFile(archive, "w") as z:
+                for name in ("runs/B01/seed0/config.json", "runs/B01/seed0/summary.json",
+                             "runs/B01/seed0/best.pt", "runs/B02/seed0/best.pt",
+                             "curves/B01_seed0.png", "predictions/B01_seed0_val.csv"):
+                    z.writestr(name, name)
+            destination = Path(tmp) / "out"
+            self.assertEqual(run_lab.restore_completed_runs(archive, destination), 5)
+            self.assertTrue((destination / "runs/B01/seed0/best.pt").exists())
+            self.assertTrue((destination / "curves/B01_seed0.png").exists())
+            self.assertFalse((destination / "runs/B02/seed0/best.pt").exists())
+
+    def test_restored_run_is_reused_without_training(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            output = Path(tmp) / "lab_output"
+            cfg = train.Config(exp_id="B01", out_dir=str(output / "runs"),
+                               pred_dir=str(output / "predictions"), epochs=10)
+            archive = Path(tmp) / "evidence.zip"
+            with zipfile.ZipFile(archive, "w") as z:
+                z.writestr("runs/B01/seed0/config.json", json.dumps(asdict(cfg)))
+                z.writestr("runs/B01/seed0/summary.json", '{"macro_f1_val": 0.785}')
+                z.writestr("runs/B01/seed0/best.pt", "checkpoint")
+            run_lab.restore_completed_runs(archive, output)
+            self.assertEqual(run_lab._load_result(cfg)["macro_f1_val"], 0.785)
 
 
 if __name__ == "__main__":

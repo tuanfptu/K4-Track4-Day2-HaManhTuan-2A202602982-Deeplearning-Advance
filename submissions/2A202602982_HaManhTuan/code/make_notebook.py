@@ -8,7 +8,7 @@ repo = code_dir.parents[2]
 nb = nbf.v4.new_notebook()
 nb.metadata.update({"kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"},
                     "language_info": {"name": "python"}, "accelerator": "GPU"})
-cells = [nbf.v4.new_markdown_cell("# DeepWeeds Lab Day 2\n\nSelect **GPU T4 x2** and enable **Internet** in Kaggle Notebook settings, then use **Save & Run All**. Outputs are written to `/kaggle/working/lab_output`. The smoke stage opens train and validation only. The full stage chooses the recipe and inference on validation before evaluating test."),
+cells = [nbf.v4.new_markdown_cell("# DeepWeeds Lab Day 2\n\nSelect **GPU T4 x2** and enable **Internet** in Kaggle Notebook settings, then use **Save & Run All**. Outputs are written to `/kaggle/working/lab_output`. The smoke stage opens train and validation only. The full stage chooses the recipe and inference on validation before evaluating test. For a retry, add the previous run's `deepweeds_evidence.zip` as a Kaggle Input; the notebook will reuse all completed runs whose configs match."),
          nbf.v4.new_code_cell("import os, torch\nassert torch.cuda.is_available(), 'Enable GPU in Kaggle settings'\nassert torch.cuda.device_count() >= 2, 'Select T4 x2 in Kaggle settings'\nprint([torch.cuda.get_device_name(i) for i in range(torch.cuda.device_count())])\n%pip -q install timm==1.0.30 fvcore==0.1.5.post20221221 openpyxl")]
 for path in [repo / "eval.py", *[code_dir / name for name in
               ("dataset.py", "model.py", "losses.py", "train.py", "inference.py", "benchmark.py", "run_lab.py", "test_lab.py")]]:
@@ -35,6 +35,18 @@ if len(list(images.glob('*.jpg'))) != 17509:
         z.extractall(images)
 assert len(list(images.glob('*.jpg'))) == 17509
 print('Verified 17,509 images and original fold-0 labels')"""))
+cells.append(nbf.v4.new_code_cell("""from pathlib import Path
+import sys
+sys.path.insert(0, '/kaggle/working/submissions/2A202602982_HaManhTuan/code')
+from run_lab import restore_completed_runs
+archives = list(Path('/kaggle/input').rglob('deepweeds_evidence.zip'))
+if len(archives) > 1:
+    raise RuntimeError(f'Multiple evidence archives attached: {archives}')
+if archives:
+    restored = restore_completed_runs(archives[0], '/kaggle/working/lab_output')
+    print(f'Restored {restored} completed-run files from {archives[0]}')
+else:
+    print('No previous evidence archive attached; all runs will start normally')"""))
 cells.append(nbf.v4.new_code_cell("""import subprocess, sys
 script = '/kaggle/working/submissions/2A202602982_HaManhTuan/code/run_lab.py'
 os.environ['DEEPWEEDS_DATA'] = '/kaggle/working/data'

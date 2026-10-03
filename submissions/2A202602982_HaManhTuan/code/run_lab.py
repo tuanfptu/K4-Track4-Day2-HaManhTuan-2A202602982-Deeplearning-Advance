@@ -5,8 +5,10 @@ import argparse
 import hashlib
 import json
 import os
+import shutil
 import subprocess
 import sys
+import zipfile
 from dataclasses import asdict, replace
 from pathlib import Path
 
@@ -51,7 +53,38 @@ def _load_result(cfg):
         if saved != asdict(cfg):
             raise ValueError(f"Existing run has a different config: {directory}")
         return json.loads(path.read_text())
-    return train.run(cfg)
+    overrides = [f"{key}={str(value).lower() if isinstance(value, bool) or value is None else value}"
+                 for key, value in asdict(cfg).items()]
+    subprocess.run([sys.executable, str(Path(train.__file__).resolve()), "--set", *overrides], check=True)
+    return json.loads(path.read_text())
+
+
+def restore_completed_runs(archive_path, output):
+    """Restore only runs with config, checkpoint and summary from an evidence zip."""
+    output = Path(output)
+    count = 0
+    with zipfile.ZipFile(archive_path) as saved:
+        names = set(saved.namelist())
+        complete = set()
+        for member in names:
+            if member.startswith("runs/") and member.endswith("/summary.json"):
+                directory = member.rsplit("/", 1)[0]
+                if {f"{directory}/config.json", f"{directory}/best.pt"}.issubset(names):
+                    complete.add(directory)
+        for member in saved.namelist():
+            if member.endswith("/"):
+                continue
+            run_file = any(member.startswith(directory + "/") for directory in complete)
+            artifact = any(member.startswith((f"curves/{directory.split('/')[1]}_{directory.split('/')[2]}.",
+                                             f"predictions/{directory.split('/')[1]}_{directory.split('/')[2]}_"))
+                           for directory in complete)
+            if run_file or artifact:
+                target = output / member
+                target.parent.mkdir(parents=True, exist_ok=True)
+                with saved.open(member) as source, target.open("wb") as destination:
+                    shutil.copyfileobj(source, destination)
+                count += 1
+    return count
 
 
 def _config(data, output, **kw):
@@ -207,18 +240,21 @@ def full(data, output, epochs=10, final_epochs=12):
     _json(output / "evidence" / "gpu.json", gpu)
     if not torch.cuda.is_available():
         raise RuntimeError("Full lab requires GPU")
-    backbones = ["resnet50", "convnext_tiny", "deit_small_patch16_224",
-                 "efficientnet_b0", "mobilenetv3_large_100"]
+    # Keep the five-family comparison within a Kaggle T4 x2 session. ConvNeXt-Tiny
+    # took ~17 min/epoch in the first Kaggle run and that process was SIGKILLed.
+    backbones = ["resnet50", "resnet18", "efficientnet_b0",
+                 "mobilenetv3_large_100", "vit_tiny_patch16_224"]
     backbone_rows = []
     for index, backbone in enumerate(backbones, 1):
         cfg = _config(data, output, exp_id=f"B{index:02d}", backbone=backbone,
-                      epochs=epochs, batch_size=64)
+                      epochs=epochs, batch_size=64,
+                      num_workers=2 if index == 1 else 0)
         backbone_rows.append(_load_result(cfg))
     best_backbone = max(backbone_rows, key=lambda r: r["macro_f1_val"])["backbone"]
     _json(output / "evidence" / "backbone_selection.json",
           {"criterion": "macro_f1_val", "selected": best_backbone, "candidates": backbone_rows})
     baseline = _config(data, output, exp_id="T00", backbone=best_backbone,
-                       epochs=epochs, batch_size=64)
+                       epochs=epochs, batch_size=64, num_workers=0)
     training_rows = [_load_result(baseline)]
     choices = [
         ("T01", {"init": "frozen"}, "initialization"),

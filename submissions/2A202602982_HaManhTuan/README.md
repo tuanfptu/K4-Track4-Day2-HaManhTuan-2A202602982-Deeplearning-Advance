@@ -8,6 +8,8 @@ The backbone and recipe screening runs use 10 epochs each; final and baseline se
 
 The notebook's full GPU run has **not been executed in this workspace**. Only local CPU smoke validation is available here. Do not treat the generated report or workbook as measured results until the Kaggle job finishes and `evidence/completed.json` exists.
 
+If a Kaggle run ends before completion, add its `deepweeds_evidence.zip` as an Input to a new notebook version. The notebook restores completed checkpoints, logs, curves and validation predictions, then skips runs whose saved configs match. Kaggle reported that the first ConvNeXt-Tiny attempt exceeded available memory after two epochs. The retry uses five lighter backbones (`resnet50`, `resnet18`, `efficientnet_b0`, `mobilenetv3_large_100`, `vit_tiny_patch16_224`), runs each experiment in a separate process, and avoids DataLoader worker processes after `B01` to reduce memory use. The batch size and epoch budgets are unchanged. An incomplete run must not be reported as a finished result.
+
 Source files live in [`code/`](code/). Rebuild the self-contained notebook after source edits with:
 
 ```bash
