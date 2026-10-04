@@ -83,4 +83,5 @@ def make_loader(df, images_dir, transform, batch_size, train, sampler=None, num_
     return DataLoader(DeepWeedsDataset(df, images_dir, transform), batch_size=batch_size,
                       shuffle=bool(train and weighted is None), sampler=weighted,
                       drop_last=bool(train and len(df) > batch_size), num_workers=num_workers,
-                      pin_memory=torch.cuda.is_available(), worker_init_fn=_seed_worker)
+                      pin_memory=torch.cuda.is_available(), worker_init_fn=_seed_worker,
+                      persistent_workers=num_workers > 0)

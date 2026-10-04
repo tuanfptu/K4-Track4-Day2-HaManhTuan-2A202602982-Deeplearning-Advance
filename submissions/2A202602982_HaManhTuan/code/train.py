@@ -59,6 +59,7 @@ class Config:
     max_train_batches: int | None = None
     max_val_batches: int | None = None
     use_two_gpus: bool = True
+    fast_mode: bool = False
 
 
 def run_dir(cfg):
@@ -69,14 +70,16 @@ def pred_path(cfg, split):
     return Path(cfg.pred_dir) / f"{cfg.exp_id}_seed{cfg.seed}_{split}.csv"
 
 
-def set_seed(seed):
+def set_seed(seed, fast_mode=False):
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
     if torch.cuda.is_available():
         torch.cuda.manual_seed_all(seed)
-    torch.backends.cudnn.deterministic = True
-    torch.backends.cudnn.benchmark = False
+    torch.backends.cudnn.deterministic = not fast_mode
+    torch.backends.cudnn.benchmark = fast_mode
+    if fast_mode:
+        torch.set_float32_matmul_precision("high")
 
 
 def build_optimizer(net, cfg):
@@ -186,7 +189,7 @@ def run(cfg):
     from eval import save_predictions
     if cfg.max_train_batches is not None and cfg.save_test_predictions:
         raise ValueError("Smoke run must not open test")
-    set_seed(cfg.seed)
+    set_seed(cfg.seed, cfg.fast_mode)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     out = run_dir(cfg)
     out.mkdir(parents=True, exist_ok=True)

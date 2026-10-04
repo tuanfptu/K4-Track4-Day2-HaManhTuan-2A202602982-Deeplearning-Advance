@@ -12,6 +12,7 @@ fi
 "$python_cmd" -c 'import torch; assert torch.cuda.is_available(), "CUDA GPU unavailable"; print(torch.cuda.get_device_name(0))'
 "$python_cmd" "$submission_dir/code/prepare_data.py" --data "$data_dir"
 export DEEPWEEDS_DATA="$data_dir"
+export DEEPWEEDS_FAST="${DEEPWEEDS_FAST:-1}"
 "$python_cmd" -m unittest discover -s "$submission_dir/code" -p 'test_*.py' -q
 "$python_cmd" "$submission_dir/code/run_lab.py" smoke --data "$data_dir" --output "$output_dir/smoke"
 "$python_cmd" "$submission_dir/code/run_lab.py" full --data "$data_dir" --output "$output_dir/full" \

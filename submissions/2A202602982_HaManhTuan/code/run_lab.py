@@ -113,6 +113,9 @@ def restore_completed_tree(source, output):
 
 
 def _config(data, output, **kw):
+    if os.environ.get("DEEPWEEDS_FAST") == "1":
+        kw["num_workers"] = int(os.environ.get("DEEPWEEDS_WORKERS", "4"))
+        kw["fast_mode"] = True
     return train.Config(images_dir=str(data / "images"), labels_dir=str(data / "labels"),
                         out_dir=str(output / "runs"), pred_dir=str(output / "predictions"),
                         **kw)
