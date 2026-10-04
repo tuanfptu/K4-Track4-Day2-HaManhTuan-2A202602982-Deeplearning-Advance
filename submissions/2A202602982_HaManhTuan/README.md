@@ -40,6 +40,10 @@ python submissions/2A202602982_HaManhTuan/code/package_submission.py \
 
 `evidence/B06_supplement_completed.json` confirms the added comparison. The final model selection was frozen before B06 and must be described as such. Do not claim a new F01 score from B06; the F01 test predictions are those already measured. `package_submission.py` copies the measured workbook, report, plots, predictions and evidence into the submission folder without copying dataset images or model checkpoints.
 
+### Additional audit evidence on the original server
+
+`code/audit_evidence.py` records a retrospective one-batch overfit check, an augmentation image grid, and batch-1 GPU latency for B01–B06. The check is explicitly marked retrospective; it must not be described as evidence that it ran before the original experiments. The script reads existing checkpoints and does not run test inference or alter final predictions. `package_submission.py` also copies each run's small config, history, summary, and split check into `run_metadata/`. Keep server logs with the evidence for stronger provenance.
+
 Run [`deepweeds_kaggle_t4x2.ipynb`](deepweeds_kaggle_t4x2.ipynb) as a new Kaggle Notebook. Select **GPU T4 x2**, enable **Internet**, then choose **Save & Run All**. The notebook is self-contained: it writes the completed Python modules and the repository's original `eval.py`, downloads the original fold-0 CSV files and images, verifies the image MD5, runs unit and smoke checks, then starts the full experiment sequence.
 
 The full sequence screens five backbones, evaluates initialization/augmentation/loss choices against one baseline, trains the selected recipe and baseline with three seeds each, compares validation inference methods, and evaluates test once the method is selected. It writes `results.xlsx`, `report.md`, `curves/`, `predictions/`, `runs/`, and `evidence/` under `/kaggle/working/lab_output`. The final cell creates `/kaggle/working/deepweeds_evidence.zip`. Kaggle keeps these files under the notebook version's **Output** tab after Save & Run All completes. Download the zip from there to keep a local copy.
