@@ -88,6 +88,6 @@ print('Evidence archive:', '/kaggle/working/deepweeds_evidence.zip')
 print('Report:', out / 'report.md')
 print('Results:', out / 'results.xlsx')"""))
 nb.cells = cells
-target = submission / "deepweeds_kaggle_t4x2.ipynb"
+target = code_dir / "deepweeds_kaggle_t4x2.ipynb"
 nbf.write(nb, target)
 print(target)

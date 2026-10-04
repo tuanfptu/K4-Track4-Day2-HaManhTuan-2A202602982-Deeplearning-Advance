@@ -40,7 +40,7 @@
       "criterion": "Cấu hình thời gian thực",
       "points": 2,
       "max": 2,
-      "note": "p95 = 4.5 ms (ngân sách 100 ms), đo đúng cách"
+      "note": "p95 = 9.2 ms (ngân sách 100 ms), đo đúng cách"
     }
   ],
   "total": 14,

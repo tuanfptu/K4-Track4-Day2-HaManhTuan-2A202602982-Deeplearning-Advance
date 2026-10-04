@@ -1,8 +1,16 @@
 # DeepWeeds Lab Day 2
 
+## Executive summary
+
+On the original DeepWeeds fold 0, six backbones were compared on validation, three training axes were tested on the selected ViT Tiny, and five inference methods were compared before final test evaluation. The final recipe used pretrained ViT Tiny, RandAugment and two-view probability averaging. Across three seeds, its test macro-F1 was **0.9327 ± 0.0029** and top-1 accuracy was **94.84% ± 0.31 percentage points**. Macro-F1 exceeded the same-backbone baseline by **0.0140**, greater than the larger observed seed standard deviation (**0.0061**). The selected inference method had batch-1 p95 latency **9.17 ms** on an RTX 3090, excluding preprocessing. The supplied evaluation script assigned **14/20 provisional model-quality points**. The remaining weakness is Chinee Apple recall (**79.6%**). B06 was measured after final selection to complete the required ResNeXt comparison; it did not change the final model or test predictions.
+
 ## Data and method
 
-Original DeepWeeds fold 0, 9 classes, {'train': 10501, 'val': 3501, 'test': 3507}. Train updates weights; validation chooses checkpoints, recipe and inference; test is scored after selection. ImageNet pretrained weights, AdamW, cosine schedule, 224px input and mixed precision are used unless an experiment config says otherwise. GPU: NVIDIA GeForce RTX 3090; PyTorch 2.6.0+cu124.
+Original DeepWeeds fold 0, 9 classes: **10,501 train**, **3,501 validation**, **3,507 test** images. The three sets are disjoint and cover all 17,509 images. Negatives account for 9,106 images (52.0%), versus 1,009–1,125 per weed class, matching Table 1 in the assignment's source paper. See `evidence/class_counts.png`, `evidence/sample_images.png`, and `evidence/split_check.json`. Macro-F1 averages F1 across all nine classes; top-1 measures the fraction of correct images. Both follow the unchanged repository `eval.py`.
+
+Train updates weights; validation chooses checkpoints, backbone, recipe and inference; test is scored after selection. The baseline uses ImageNet pretrained weights, AdamW, backbone LR 1e-4, head LR 1e-3, cosine schedule with one warmup epoch, batch 64, 224 px images and mixed precision unless an experiment config says otherwise. Training images use random resized crop and horizontal flip; validation/test use resize 256, center crop 224 and ImageNet normalization. Screening runs use seed 0 and 10 epochs; final runs use seeds 0–2 and 12 epochs. The best validation macro-F1 checkpoint is retained without early stopping. Hardware: NVIDIA GeForce RTX 3090; Python 3.10.12, PyTorch 2.6.0+cu124, torchvision 0.21.0+cu124, timm 1.0.30 (full versions: `evidence/software.json`). Each run's exact config and history are in `run_metadata/`.
+
+![Class distribution across the three original splits](evidence/class_counts.png)
 
 ## Backbone comparison (validation)
 
@@ -13,8 +21,11 @@ Original DeepWeeds fold 0, 9 classes, {'train': 10501, 'val': 3501, 'test': 3507
 | B03      | resnet34             |       0.765125 |   0.830905 |   21.2893  | 3.67076  |             8.70184 |
 | B04      | regnetx_002          |       0.84455  |   0.884604 |    2.31911 | 0.203019 |             6.47946 |
 | B05      | vit_tiny_patch16_224 |       0.919873 |   0.941445 |    5.52615 | 1.07939  |             6.68857 |
+| B06      | resnext50_32x4d      |       0.786624 |   0.835476 |   22.99835 | 4.25735  |            16.02510 |
 
-Selected: vit_tiny_patch16_224, highest validation macro-F1.
+Selected: vit_tiny_patch16_224, highest validation macro-F1. B06 was added after the final model had been frozen; its lower validation score supports retaining that choice. The `Backbones` sheet also includes batch-1 p50/p95/p99 for all six candidates; `evidence/backbone_quality_latency.png` plots the measured quality-latency tradeoff. Pretrained tags are listed in the workbook, since differing ImageNet recipes affect this comparison.
+
+![Validation macro-F1 versus batch-1 p95 inference latency](evidence/backbone_quality_latency.png)
 
 ## Training recipe (validation)
 
@@ -71,13 +82,13 @@ Final macro-F1: 0.9327 +/- 0.0029; baseline: 0.9187; delta: +0.0140. The standar
 
 ## Latency
 
-| method      |      p50 |      p95 |      p99 |     mean |   n | gpu                     | dtype   |   batch |   img_size |   images_per_s | torch       |   preprocessing_included |   k_views |
-|:------------|---------:|---------:|---------:|---------:|----:|:------------------------|:--------|--------:|-----------:|---------------:|:------------|-------------------------:|----------:|
-| I00         |  4.49524 |  4.52493 |  4.55031 |  4.44224 |  50 | NVIDIA GeForce RTX 3090 | fp32    |       1 |        224 |        222.458 | 2.6.0+cu124 |                        0 |       nan |
-| I00         |  6.04628 |  6.13369 |  6.20205 |  6.04894 |  50 | NVIDIA GeForce RTX 3090 | amp     |       1 |        224 |        165.391 | 2.6.0+cu124 |                        0 |       nan |
-| I00         | 10.4221  | 10.457   | 10.5096  | 10.4273  |  50 | NVIDIA GeForce RTX 3090 | fp32    |      32 |        224 |       3070.39  | 2.6.0+cu124 |                        0 |       nan |
-| I00         |  6.55759 |  6.91082 |  7.09762 |  6.59888 |  50 | NVIDIA GeForce RTX 3090 | amp     |      32 |        224 |       4879.84  | 2.6.0+cu124 |                        0 |       nan |
-| I01/I02/I04 |  8.54725 |  9.16956 |  9.33566 |  8.71155 |  50 | nan                     | nan     |     nan |        nan |        nan     | nan         |                      nan |         2 |
+| Method | Views | Batch | Precision | p50 (ms) | p95 (ms) | p99 (ms) |
+|:---|---:|---:|:---|---:|---:|---:|
+| I00 | 1 | 1 | fp32 | 4.50 | 4.52 | 4.55 |
+| I00 | 1 | 1 | AMP | 6.05 | 6.13 | 6.20 |
+| I00 | 1 | 32 | fp32 | 10.42 | 10.46 | 10.51 |
+| I00 | 1 | 32 | AMP | 6.56 | 6.91 | 7.10 |
+| I01/I02/I04 | 2 | 1 | model forward | 8.55 | 9.17 | 9.34 |
 
 Latency excludes preprocessing, uses 10 warmup and 50 synchronized iterations. See `evidence/`, `curves/`, `predictions/`, and `results.xlsx` for available evidence. Single-seed screening is subject to noise; results may vary across GPU/software versions.
 
@@ -92,6 +103,14 @@ B06 validation macro-F1: 0.7866; top-1: 0.8355; parameters: 23.00M; GMAC: 4.2573
 
 `evidence/F01_seed0_val_confusion.png` shows the validation confusion matrix. `evidence/F01_seed0_val_errors.png` shows misclassified validation images with their true and predicted classes. These images are for diagnosis; no test labels were used to select or change the model.
 
+The aggregated three-seed **test** confusion matrix and nine Chinee Apple mistakes from F01 seed 0 are provided below as post-evaluation error analysis. They were generated from the already finalized predictions and were not used to alter the model or inference rule.
+
+Several of these examples contain dense mixed foliage, partially obscured leaves, or strong shadows/highlights. Those visible conditions plausibly contribute to Chinee Apple being predicted as Negatives or Snake Weed, but the image gallery is illustrative; it does not establish a causal effect. On test, F01 Chinee Apple recall averaged **79.6%**, slightly below F00's **80.4%**, even though F01's overall macro-F1 improved. This is why the overall score should not replace per-class analysis.
+
+![F01 test confusion matrix summed over three seeds](evidence/F01_test_confusion.png)
+
+![Examples of Chinee Apple test errors after final evaluation](evidence/F01_test_chinee_errors.png)
+
 ## Interpretation and limitations
 
 The original fold-0 split has 9,106 Negatives (52.0% of all images); each weed class has 1,009–1,125. This agrees with the class counts in the assignment's Table 1. Macro-F1 therefore matters alongside top-1 accuracy: a model could predict the dominant class often and still miss important weed species. Train, validation, and test contain 10,501, 3,501, and 3,507 distinct images, respectively (`evidence/split_check.json`).
@@ -100,7 +119,7 @@ B05 (ViT Tiny) achieved validation macro-F1 0.9199, versus 0.8446 for the next b
 
 Within the ViT training comparison, RandAugment increased validation macro-F1 from 0.9199 (T00) to 0.9269 (T04), a gain of 0.0070. Frozen-backbone and scratch initialization fell to 0.5958 and 0.6049. Label smoothing and focal loss were below the cross-entropy baseline in this run. Only RandAugment was selected; F01 retrained that choice with three seeds. The screening comparisons themselves use one seed, so small differences are uncertain.
 
-F01 with two-view probability averaging (I01) achieved test macro-F1 **0.9327 ± 0.0029** and top-1 **0.9484 ± 0.0031** across three seeds. F00 achieved macro-F1 **0.9187 ± 0.0061**; the difference is **+0.0140**, greater than the larger observed seed standard deviation. On validation, I01 averaged 0.9317 macro-F1 versus 0.9290 for one-view I00, but its batch-1 p95 latency was **9.17 ms**, compared with **4.52 ms** for I00. Both are below the rubric's 100 ms budget. The automatic grade's I5 note quotes 4.5 ms for the one-view candidate; the selected I01 method is the 9.17 ms measurement in `evidence/latency.csv`. Latency excludes image loading and preprocessing.
+F01 with two-view probability averaging (I01) achieved test macro-F1 **0.9327 ± 0.0029** and top-1 **0.9484 ± 0.0031** across three seeds. F00 achieved macro-F1 **0.9187 ± 0.0061**; the difference is **+0.0140**, greater than the larger observed seed standard deviation. On validation, I01 averaged 0.9317 macro-F1 versus 0.9290 for one-view I00, but its batch-1 p95 latency was **9.17 ms**, compared with **4.52 ms** for I00. Both are below the rubric's 100 ms budget. The final `eval.py grade` invocation uses the selected I01's **9.17 ms** latency, as recorded in `evidence/grade/grade_I.json`. Latency excludes image loading and preprocessing.
 
 Temperature scaling reduced validation ECE for some inference candidates, but I01 was selected by mean validation macro-F1 and does not use temperature scaling. Thus the automatic grade correctly gives I4a zero for the submitted final predictions. No test results were used to change the selected inference method.
 
@@ -113,3 +132,13 @@ The study uses one predefined fold and only one seed for backbone and training s
 The retrospective GPU check in `evidence/pipeline_check.json` used a scratch MobileNetV3 Small and a fixed batch of nine images, one per class. Its initial cross-entropy was 2.0495 (the uniform nine-class reference is ln 9 = 2.1972); loss fell to 0.00000163 after 20 optimizer steps. This supports that the model can learn a tiny batch, but **this check was run after the full experiment**, not as a preflight. `evidence/augmentation_check.png` shows each selected original image beside its transformed input after reversing ImageNet normalization. The full per-step trace is in `evidence/one_batch_overfit.csv`.
 
 The six backbone checkpoints were measured again on the RTX 3090 with batch size 1, fp32, 10 warmup iterations, 50 synchronized timing iterations, and no preprocessing. The results are in the `BackboneLatency` sheet and `evidence/backbone_quality_latency.png`. B05 had p95 **4.23 ms** and validation macro-F1 **0.9199**. B02 was fastest at **2.35 ms** but had macro-F1 **0.7687**; B04 reached **0.8446** at **4.87 ms**. B06's repeat p95 was **5.62 ms**, compared with **5.44 ms** in its first measurement, illustrating normal timing variation. B05 offered the strongest validation quality among the measured candidates while staying far below the 100 ms budget. The backbone screening uses different pretrained weight recipes and one seed, so these measurements do not isolate architecture alone.
+
+## Conclusion and deployment recommendation
+
+The largest observed validation difference came from backbone selection: B05 exceeded B04 by **0.0753** macro-F1. Within B05, the selected RandAugment change improved the single-seed screening result by **0.0070**, and I01 improved mean validation macro-F1 over I00 by **0.0026**. The latter two differences are small relative to the uncertainty of single-seed screening and should not be treated as universal gains. After training the final recipe with three seeds, the measured F01 test macro-F1 advantage over F00 was **0.0140**, larger than the observed seed standard deviation. For a robot with a 30–100 ms frame budget on hardware comparable to the measured RTX 3090, F01 with I01 is the quality-oriented choice at **9.17 ms p95 model latency**; F01 with a single view is a lower-cost candidate at **4.52 ms p95** but has lower mean validation macro-F1. End-to-end camera latency must be measured separately before deployment.
+
+The supplied `eval.py grade` reported **14/20** provisional quality points: I1 5/7, I2 5/5, I3 1/4, I4a 0/1, I4b 1/1, I5 2/2. The final I5 invocation used the selected two-view I01 latency of **9.17 ms**, below the 100 ms criterion. Chinee Apple recall and calibration remain open issues. No post-test model or inference change was made to chase these thresholds.
+
+## Reproduction appendix
+
+All B01–B06, T00–T06, F00/F01 × seeds 0–2, and I00–I04 are represented in `results.xlsx`. Exact settings and per-epoch logs for the 19 training runs are in `run_metadata/<exp_id>/seed<seed>/`; the corresponding curves are in `curves/`. Training source is in `code/`, and the step order and versions are in `README.md`. Original server stdout is in `evidence/server.log`, with `supplement.log` and `audit.log` for the later B06 and retrospective checks. The original `eval.py` was not edited. Large model checkpoints and dataset images are intentionally excluded from the Git submission; the saved predictions are sufficient to recompute all reported test metrics.

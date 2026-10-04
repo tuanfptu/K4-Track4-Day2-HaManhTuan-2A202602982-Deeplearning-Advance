@@ -1,4 +1,4 @@
-"""Reproducible DeepWeeds experiment runner for Kaggle T4 x2."""
+"""Reproducible DeepWeeds experiment runner for CUDA GPUs."""
 from __future__ import annotations
 
 import argparse
