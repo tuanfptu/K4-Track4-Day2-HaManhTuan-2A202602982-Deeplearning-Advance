@@ -1,5 +1,24 @@
 # DeepWeeds Lab Day 2
 
+## Run on an RTX 3090 server
+
+Use a server image with a working NVIDIA driver, Python 3 and CUDA-enabled PyTorch. From the repository root:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124
+python -m pip install -r submissions/2A202602982_HaManhTuan/requirements-server.txt
+python -c 'import torch; print(torch.cuda.get_device_name(0))'
+set -o pipefail
+bash submissions/2A202602982_HaManhTuan/run_server.sh 2>&1 | tee server.log
+```
+
+The script downloads and checks 17,509 images and fold-0 labels, runs tests and a smoke experiment, then writes the full lab to `lab_output/full/`. It supports one GPU; the two-GPU option has no effect when only one device is visible. Keep the terminal attached or run it in `tmux`. If interrupted, rerun the same command with the same data, output path and epoch settings; finished experiments are reused. Download `lab_output/full/` after `evidence/completed.json` appears. To use existing data or another output disk, set `DEEPWEEDS_DATA` and `DEEPWEEDS_OUTPUT`. To change the training budgets, set `DEEPWEEDS_EPOCHS` and `DEEPWEEDS_FINAL_EPOCHS` before the first run. Defaults are 10 and 12; changing them after a partial run requires a fresh output directory.
+
+The CUDA wheel command is for Linux and a compatible NVIDIA driver. If the rental image already has working CUDA PyTorch, keep that installation and install only `requirements-server.txt`.
+
 Run [`deepweeds_kaggle_t4x2.ipynb`](deepweeds_kaggle_t4x2.ipynb) as a new Kaggle Notebook. Select **GPU T4 x2**, enable **Internet**, then choose **Save & Run All**. The notebook is self-contained: it writes the completed Python modules and the repository's original `eval.py`, downloads the original fold-0 CSV files and images, verifies the image MD5, runs unit and smoke checks, then starts the full experiment sequence.
 
 The full sequence screens five backbones, evaluates initialization/augmentation/loss choices against one baseline, trains the selected recipe and baseline with three seeds each, compares validation inference methods, and evaluates test once the method is selected. It writes `results.xlsx`, `report.md`, `curves/`, `predictions/`, `runs/`, and `evidence/` under `/kaggle/working/lab_output`. The final cell creates `/kaggle/working/deepweeds_evidence.zip`. Kaggle keeps these files under the notebook version's **Output** tab after Save & Run All completes. Download the zip from there to keep a local copy.

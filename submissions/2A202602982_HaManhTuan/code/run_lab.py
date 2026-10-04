@@ -265,10 +265,10 @@ def full(data, output, epochs=10, final_epochs=12):
     _json(output / "evidence" / "gpu.json", gpu)
     if not torch.cuda.is_available():
         raise RuntimeError("Full lab requires GPU")
-    # Keep the five-family comparison within a Kaggle T4 x2 session. ConvNeXt-Tiny
-    # took ~17 min/epoch in the first Kaggle run and that process was SIGKILLed.
-    backbones = ["resnet50", "resnet18", "efficientnet_b0",
-                 "mobilenetv3_large_100", "vit_tiny_patch16_224"]
+    # B01/B02 retain their configs so completed Kaggle results can be restored.
+    # ConvNeXt and EfficientNet were too slow in observed T4 x2 runs.
+    backbones = ["resnet50", "resnet18", "resnet34",
+                 "regnetx_002", "vit_tiny_patch16_224"]
     backbone_rows = []
     for index, backbone in enumerate(backbones, 1):
         cfg = _config(data, output, exp_id=f"B{index:02d}", backbone=backbone,
