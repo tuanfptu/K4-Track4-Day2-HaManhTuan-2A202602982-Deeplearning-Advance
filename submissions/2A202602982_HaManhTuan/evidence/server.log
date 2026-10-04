@@ -1,0 +1,596 @@
+NVIDIA GeForce RTX 3090
+Verified 17509 images and original labels at /root/K4-Track4-Day2-HaManhTuan-2A202602982-Deeplearning-Advance/data
+----------------------------------------------------------------------
+Ran 11 tests in 0.609s
+
+OK
+{"exp_id": "SMOKE", "seed": 0, "epoch": 1, "train_loss": 2.32830810546875, "lr": 0.0001, "val_loss": 2.178239107131958, "macro_f1_val": 0.024691358024691357, "top1_val": 0.0625, "seconds": 1.1338919936679304}
+Unsupported operator aten::hardswish_ encountered 19 time(s)
+Unsupported operator aten::mean encountered 9 time(s)
+Unsupported operator aten::hardsigmoid encountered 9 time(s)
+Unsupported operator aten::mul encountered 9 time(s)
+Unsupported operator aten::add encountered 7 time(s)
+{'exp_id': 'SMOKE', 'seed': 0, 'backbone': 'mobilenetv3_small_050', 'pretrained_tag': 'scratch', 'params_m': 0.577449, 'best_epoch': 1, 'macro_f1_val': 0.03553365048520438, 'top1_val': 0.10168523279063124, 'ece_val': 0.016470462707358413, 'seconds_per_epoch': 1.1338919936679304, 'gmac': 0.008458752}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{"exp_id": "B01", "seed": 0, "epoch": 1, "train_loss": 1.6286251719405012, "lr": 0.0001, "val_loss": 1.2218340157577223, "macro_f1_val": 0.23759607005301195, "top1_val": 0.5704084547272208, "seconds": 14.835972113069147}
+{"exp_id": "B01", "seed": 0, "epoch": 2, "train_loss": 0.8963553945465785, "lr": 9.705700239897809e-05, "val_loss": 0.7295785654241512, "macro_f1_val": 0.6211330775005235, "top1_val": 0.7415024278777492, "seconds": 12.892354998271912}
+{"exp_id": "B01", "seed": 0, "epoch": 3, "train_loss": 0.5957511677974607, "lr": 8.843868885063593e-05, "val_loss": 0.5725966810635313, "macro_f1_val": 0.7253026422142902, "top1_val": 0.8046272493573264, "seconds": 12.967156094964594}
+{"exp_id": "B01", "seed": 0, "epoch": 4, "train_loss": 0.4496063762685148, "lr": 7.518410213227822e-05, "val_loss": 0.538415148679749, "macro_f1_val": 0.7396541779433167, "top1_val": 0.8137674950014282, "seconds": 13.027153651230037}
+{"exp_id": "B01", "seed": 0, "epoch": 5, "train_loss": 0.3832497807537637, "lr": 5.889194101900509e-05, "val_loss": 0.47002133726222417, "macro_f1_val": 0.767282973661378, "top1_val": 0.8346186803770351, "seconds": 13.091037699952722}
+{"exp_id": "B01", "seed": 0, "epoch": 6, "train_loss": 0.3385097760616279, "lr": 4.152728058776701e-05, "val_loss": 0.47671419390607855, "macro_f1_val": 0.773404157224816, "top1_val": 0.8386175378463296, "seconds": 13.093056508339942}
+{"exp_id": "B01", "seed": 0, "epoch": 7, "train_loss": 0.2985931151523823, "lr": 2.518455516166517e-05, "val_loss": 0.4617068023553612, "macro_f1_val": 0.7859201403052154, "top1_val": 0.8469008854612968, "seconds": 13.115701659116894}
+{"exp_id": "B01", "seed": 0, "epoch": 8, "train_loss": 0.2888848776134049, "lr": 1.183493862002702e-05, "val_loss": 0.4585803337384551, "macro_f1_val": 0.7847143250175094, "top1_val": 0.8469008854612968, "seconds": 13.170402470044792}
+{"exp_id": "B01", "seed": 0, "epoch": 9, "train_loss": 0.27859704568982124, "lr": 3.0885917371310745e-06, "val_loss": 0.45832559062017436, "macro_f1_val": 0.7860834558254273, "top1_val": 0.847186518137675, "seconds": 13.165272541809827}
+{"exp_id": "B01", "seed": 0, "epoch": 10, "train_loss": 0.27631269690648813, "lr": 1e-09, "val_loss": 0.4438841607154556, "macro_f1_val": 0.7921602672184821, "top1_val": 0.848900314195944, "seconds": 13.12596741784364}
+Unsupported operator aten::max_pool2d encountered 1 time(s)
+Unsupported operator aten::add_ encountered 16 time(s)
+{
+  "exp_id": "B01",
+  "seed": 0,
+  "backbone": "resnet50",
+  "pretrained_tag": "timm/resnet50.a1_in1k",
+  "params_m": 23.526473,
+  "best_epoch": 10,
+  "macro_f1_val": 0.7921602672184821,
+  "top1_val": 0.848900314195944,
+  "ece_val": 0.025250498344815846,
+  "seconds_per_epoch": 13.24840751546435,
+  "gmac": 4.109483008
+}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{"exp_id": "B02", "seed": 0, "epoch": 1, "train_loss": 1.6459460956294363, "lr": 0.0001, "val_loss": 1.3184113778648496, "macro_f1_val": 0.1591184915937521, "top1_val": 0.5461296772350757, "seconds": 7.381525750271976}
+{"exp_id": "B02", "seed": 0, "epoch": 2, "train_loss": 1.013639707754298, "lr": 9.698463103929542e-05, "val_loss": 0.8367814088473828, "macro_f1_val": 0.6080589662499062, "top1_val": 0.7326478149100257, "seconds": 6.865978572983295}
+{"exp_id": "B02", "seed": 0, "epoch": 3, "train_loss": 0.6930215880274773, "lr": 8.83022221559489e-05, "val_loss": 0.7091135249516515, "macro_f1_val": 0.6766819931189695, "top1_val": 0.7643530419880035, "seconds": 6.776133667677641}
+{"exp_id": "B02", "seed": 0, "epoch": 4, "train_loss": 0.5550149793668491, "lr": 7.500000000000001e-05, "val_loss": 0.6062326061831171, "macro_f1_val": 0.7053448142348115, "top1_val": 0.7872036560982576, "seconds": 6.392170118167996}
+{"exp_id": "B02", "seed": 0, "epoch": 5, "train_loss": 0.45869949514546043, "lr": 5.868240888334653e-05, "val_loss": 0.5534525565915842, "macro_f1_val": 0.7454563108741001, "top1_val": 0.8131962296486718, "seconds": 6.489561007358134}
+{"exp_id": "B02", "seed": 0, "epoch": 6, "train_loss": 0.4119720256364927, "lr": 4.131759111665349e-05, "val_loss": 0.5237194400486078, "macro_f1_val": 0.7553363202449845, "top1_val": 0.8211939445872608, "seconds": 6.378335497807711}
+{"exp_id": "B02", "seed": 0, "epoch": 7, "train_loss": 0.38039438117568086, "lr": 2.500000000000001e-05, "val_loss": 0.5029220424764873, "macro_f1_val": 0.7645406997851641, "top1_val": 0.8271922307912025, "seconds": 6.14462638925761}
+{"exp_id": "B02", "seed": 0, "epoch": 8, "train_loss": 0.36782350681903886, "lr": 1.1697777844051105e-05, "val_loss": 0.5050509025866017, "macro_f1_val": 0.7642923634649902, "top1_val": 0.8280491288203371, "seconds": 6.553529952187091}
+{"exp_id": "B02", "seed": 0, "epoch": 9, "train_loss": 0.3512771986424923, "lr": 3.0153689607045845e-06, "val_loss": 0.5000083827522951, "macro_f1_val": 0.7687399436909602, "top1_val": 0.8300485575549843, "seconds": 6.400044908747077}
+{"exp_id": "B02", "seed": 0, "epoch": 10, "train_loss": 0.35462290239406796, "lr": 1e-09, "val_loss": 0.5121958789672895, "macro_f1_val": 0.764658475954886, "top1_val": 0.8266209654384462, "seconds": 6.371268042828888}
+Unsupported operator aten::max_pool2d encountered 1 time(s)
+Unsupported operator aten::add_ encountered 8 time(s)
+{
+  "exp_id": "B02",
+  "seed": 0,
+  "backbone": "resnet18",
+  "pretrained_tag": "timm/resnet18.a1_in1k",
+  "params_m": 11.181129,
+  "best_epoch": 9,
+  "macro_f1_val": 0.7687399436909602,
+  "top1_val": 0.8300485575549843,
+  "ece_val": 0.03839697225949859,
+  "seconds_per_epoch": 6.575317390728742,
+  "gmac": 1.818558464
+}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{"exp_id": "B03", "seed": 0, "epoch": 1, "train_loss": 1.676313759350195, "lr": 0.0001, "val_loss": 1.4012242280493734, "macro_f1_val": 0.0810750450351251, "top1_val": 0.5215652670665524, "seconds": 9.842444790992886}
+{"exp_id": "B03", "seed": 0, "epoch": 2, "train_loss": 1.0742794533328313, "lr": 9.698463103929542e-05, "val_loss": 0.9510251959369238, "macro_f1_val": 0.524305294070803, "top1_val": 0.6852327906312482, "seconds": 8.537301790900528}
+{"exp_id": "B03", "seed": 0, "epoch": 3, "train_loss": 0.7445020980951262, "lr": 8.83022221559489e-05, "val_loss": 0.7205171110935805, "macro_f1_val": 0.640761073255296, "top1_val": 0.7526421022564982, "seconds": 8.616452382877469}
+{"exp_id": "B03", "seed": 0, "epoch": 4, "train_loss": 0.5899107241775932, "lr": 7.500000000000001e-05, "val_loss": 0.5905703363402235, "macro_f1_val": 0.7189447964515598, "top1_val": 0.8026278206226792, "seconds": 8.57616548333317}
+{"exp_id": "B03", "seed": 0, "epoch": 5, "train_loss": 0.5000926213475262, "lr": 5.868240888334653e-05, "val_loss": 0.5430491394194423, "macro_f1_val": 0.73965918974715, "top1_val": 0.8143387603541845, "seconds": 8.533871203195304}
+{"exp_id": "B03", "seed": 0, "epoch": 6, "train_loss": 0.43835320469082856, "lr": 4.131759111665349e-05, "val_loss": 0.5280333936163372, "macro_f1_val": 0.7429660142728097, "top1_val": 0.8163381890888317, "seconds": 8.560713707003742}
+{"exp_id": "B03", "seed": 0, "epoch": 7, "train_loss": 0.40493560691432257, "lr": 2.500000000000001e-05, "val_loss": 0.48742965846972885, "macro_f1_val": 0.763363045633365, "top1_val": 0.8283347614967153, "seconds": 8.581555430777371}
+{"exp_id": "B03", "seed": 0, "epoch": 8, "train_loss": 0.38418303039379237, "lr": 1.1697777844051105e-05, "val_loss": 0.5038231221548798, "macro_f1_val": 0.7531396265471311, "top1_val": 0.8237646386746644, "seconds": 8.645405136980116}
+{"exp_id": "B03", "seed": 0, "epoch": 9, "train_loss": 0.3709625800753512, "lr": 3.0153689607045845e-06, "val_loss": 0.48732583847464034, "macro_f1_val": 0.7651253924730567, "top1_val": 0.8309054555841188, "seconds": 8.5433976422064}
+{"exp_id": "B03", "seed": 0, "epoch": 10, "train_loss": 0.37183012886018285, "lr": 1e-09, "val_loss": 0.4913620507928243, "macro_f1_val": 0.7602526328193856, "top1_val": 0.8280491288203371, "seconds": 8.58113262616098}
+Unsupported operator aten::max_pool2d encountered 1 time(s)
+Unsupported operator aten::add_ encountered 16 time(s)
+{
+  "exp_id": "B03",
+  "seed": 0,
+  "backbone": "resnet34",
+  "pretrained_tag": "timm/resnet34.a1_in1k",
+  "params_m": 21.289289,
+  "best_epoch": 9,
+  "macro_f1_val": 0.7651253924730567,
+  "top1_val": 0.8309054555841188,
+  "ece_val": 0.012009611626210755,
+  "seconds_per_epoch": 8.701844019442797,
+  "gmac": 3.670755328
+}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{"exp_id": "B04", "seed": 0, "epoch": 1, "train_loss": 1.4125650979396773, "lr": 0.0001, "val_loss": 0.8799637602724644, "macro_f1_val": 0.6257386350719338, "top1_val": 0.7346472436446729, "seconds": 7.933549995999783}
+{"exp_id": "B04", "seed": 0, "epoch": 2, "train_loss": 0.5842650867089992, "lr": 9.698463103929542e-05, "val_loss": 0.5734585185658417, "macro_f1_val": 0.7376297650199718, "top1_val": 0.7963439017423594, "seconds": 6.249471954070032}
+{"exp_id": "B04", "seed": 0, "epoch": 3, "train_loss": 0.36790916996031275, "lr": 8.83022221559489e-05, "val_loss": 0.530267479052989, "macro_f1_val": 0.74533213021845, "top1_val": 0.8177663524707226, "seconds": 6.363440950866789}
+{"exp_id": "B04", "seed": 0, "epoch": 4, "train_loss": 0.29783091834950737, "lr": 7.500000000000001e-05, "val_loss": 0.39464770729492066, "macro_f1_val": 0.8174292336014101, "top1_val": 0.8671808054841473, "seconds": 6.313366124872118}
+{"exp_id": "B04", "seed": 0, "epoch": 5, "train_loss": 0.23890773892947814, "lr": 5.868240888334653e-05, "val_loss": 0.36758610641094863, "macro_f1_val": 0.8376877566844114, "top1_val": 0.8786061125392745, "seconds": 6.430442798417062}
+{"exp_id": "B04", "seed": 0, "epoch": 6, "train_loss": 0.19944543591359767, "lr": 4.131759111665349e-05, "val_loss": 0.39849448139345395, "macro_f1_val": 0.8161915900082216, "top1_val": 0.8628963153384748, "seconds": 6.424176258035004}
+{"exp_id": "B04", "seed": 0, "epoch": 7, "train_loss": 0.183391241424876, "lr": 2.500000000000001e-05, "val_loss": 0.3708117283589157, "macro_f1_val": 0.8351475698258661, "top1_val": 0.8771779491573836, "seconds": 6.4003934152424335}
+{"exp_id": "B04", "seed": 0, "epoch": 8, "train_loss": 0.16836808490135322, "lr": 1.1697777844051105e-05, "val_loss": 0.37719382229480564, "macro_f1_val": 0.827542782453384, "top1_val": 0.8731790916880892, "seconds": 6.219834626186639}
+{"exp_id": "B04", "seed": 0, "epoch": 9, "train_loss": 0.1497896082199565, "lr": 3.0153689607045845e-06, "val_loss": 0.35441113109079236, "macro_f1_val": 0.8429598431934483, "top1_val": 0.8828906026849471, "seconds": 6.217826852109283}
+{"exp_id": "B04", "seed": 0, "epoch": 10, "train_loss": 0.15660277354281124, "lr": 1e-09, "val_loss": 0.3505380351231528, "macro_f1_val": 0.8445504810244263, "top1_val": 0.8846043987432162, "seconds": 6.242076446767896}
+Unsupported operator aten::add encountered 13 time(s)
+{
+  "exp_id": "B04",
+  "seed": 0,
+  "backbone": "regnetx_002",
+  "pretrained_tag": "timm/regnetx_002.pycls_in1k",
+  "params_m": 2.319113,
+  "best_epoch": 10,
+  "macro_f1_val": 0.8445504810244263,
+  "top1_val": 0.8846043987432162,
+  "ece_val": 0.01762348520725125,
+  "seconds_per_epoch": 6.479457942256704,
+  "gmac": 0.203019328
+}
+{"exp_id": "B05", "seed": 0, "epoch": 1, "train_loss": 0.9895550499602062, "lr": 9.878048780487805e-05, "val_loss": 0.7246564578683129, "macro_f1_val": 0.657863158330587, "top1_val": 0.7369323050556984, "seconds": 6.9860416441224515}
+{"exp_id": "B05", "seed": 0, "epoch": 2, "train_loss": 0.3823144355925118, "lr": 9.709286838710774e-05, "val_loss": 0.4589936296553722, "macro_f1_val": 0.7790167902546788, "top1_val": 0.8460439874321622, "seconds": 6.62676031794399}
+{"exp_id": "B05", "seed": 0, "epoch": 3, "train_loss": 0.24042247935402683, "lr": 8.850666114421079e-05, "val_loss": 0.52220404743978, "macro_f1_val": 0.7675569187579099, "top1_val": 0.8297629248786061, "seconds": 6.595839218702167}
+{"exp_id": "B05", "seed": 0, "epoch": 4, "train_loss": 0.1861367212926469, "lr": 7.527598226952894e-05, "val_loss": 0.29142207987085134, "macro_f1_val": 0.8687135904615888, "top1_val": 0.9008854612967724, "seconds": 6.691325864288956}
+{"exp_id": "B05", "seed": 0, "epoch": 5, "train_loss": 0.12359612456681889, "lr": 5.899664689937283e-05, "val_loss": 0.2671627908800371, "macro_f1_val": 0.8865497518594077, "top1_val": 0.9168808911739503, "seconds": 6.778435403946787}
+{"exp_id": "B05", "seed": 0, "epoch": 6, "train_loss": 0.09362874182350026, "lr": 4.1632183136785194e-05, "val_loss": 0.26683695588374745, "macro_f1_val": 0.8834441911323183, "top1_val": 0.9123107683518995, "seconds": 6.824462853372097}
+{"exp_id": "B05", "seed": 0, "epoch": 7, "train_loss": 0.05645321063106743, "lr": 2.527700158372548e-05, "val_loss": 0.21339001946876948, "macro_f1_val": 0.9076480118919404, "top1_val": 0.9317337903456155, "seconds": 6.5336941089481115}
+{"exp_id": "B05", "seed": 0, "epoch": 8, "train_loss": 0.03712296163345256, "lr": 1.1903778512265102e-05, "val_loss": 0.19714744861076233, "macro_f1_val": 0.9185140567858419, "top1_val": 0.9397315052842045, "seconds": 6.792518114671111}
+{"exp_id": "B05", "seed": 0, "epoch": 9, "train_loss": 0.028640253707857395, "lr": 3.1255219925744096e-06, "val_loss": 0.19830882139833816, "macro_f1_val": 0.9191377747698662, "top1_val": 0.9403027706369609, "seconds": 6.519722876138985}
+{"exp_id": "B05", "seed": 0, "epoch": 10, "train_loss": 0.025917414314590576, "lr": 1.0193141965486596e-09, "val_loss": 0.199313685166022, "macro_f1_val": 0.9198726145096434, "top1_val": 0.9414453013424736, "seconds": 6.536948332097381}
+Unsupported operator aten::add encountered 25 time(s)
+Unsupported operator aten::scaled_dot_product_attention encountered 12 time(s)
+Unsupported operator aten::gelu encountered 12 time(s)
+The following submodules of the model were never called during the trace of the graph. They may be unused, or they were accessed by direct calls to .forward() or via other python methods. In the latter case they will have zeros for statistics, though their statistics will still contribute to their parent calling module.
+blocks.0.attn.attn_drop, blocks.1.attn.attn_drop, blocks.10.attn.attn_drop, blocks.11.attn.attn_drop, blocks.2.attn.attn_drop, blocks.3.attn.attn_drop, blocks.4.attn.attn_drop, blocks.5.attn.attn_drop, blocks.6.attn.attn_drop, blocks.7.attn.attn_drop, blocks.8.attn.attn_drop, blocks.9.attn.attn_drop
+{
+  "exp_id": "B05",
+  "seed": 0,
+  "backbone": "vit_tiny_patch16_224",
+  "pretrained_tag": "timm/vit_tiny_patch16_224.augreg_in21k_ft_in1k",
+  "params_m": 5.526153,
+  "best_epoch": 10,
+  "macro_f1_val": 0.9198726145096434,
+  "top1_val": 0.9414453013424736,
+  "ece_val": 0.016231422576179703,
+  "seconds_per_epoch": 6.688574873423204,
+  "gmac": 1.079389056
+}
+{"exp_id": "T00", "seed": 0, "epoch": 1, "train_loss": 0.9895550499602062, "lr": 9.878048780487805e-05, "val_loss": 0.7246564578683129, "macro_f1_val": 0.657863158330587, "top1_val": 0.7369323050556984, "seconds": 7.530986470170319}
+{"exp_id": "T00", "seed": 0, "epoch": 2, "train_loss": 0.3823144355925118, "lr": 9.709286838710774e-05, "val_loss": 0.4589936296553722, "macro_f1_val": 0.7790167902546788, "top1_val": 0.8460439874321622, "seconds": 6.549563474953175}
+{"exp_id": "T00", "seed": 0, "epoch": 3, "train_loss": 0.24042247935402683, "lr": 8.850666114421079e-05, "val_loss": 0.52220404743978, "macro_f1_val": 0.7675569187579099, "top1_val": 0.8297629248786061, "seconds": 6.435982728842646}
+{"exp_id": "T00", "seed": 0, "epoch": 4, "train_loss": 0.1861367212926469, "lr": 7.527598226952894e-05, "val_loss": 0.29142207987085134, "macro_f1_val": 0.8687135904615888, "top1_val": 0.9008854612967724, "seconds": 6.40748496633023}
+{"exp_id": "T00", "seed": 0, "epoch": 5, "train_loss": 0.12359612456681889, "lr": 5.899664689937283e-05, "val_loss": 0.2671627908800371, "macro_f1_val": 0.8865497518594077, "top1_val": 0.9168808911739503, "seconds": 6.500046434812248}
+{"exp_id": "T00", "seed": 0, "epoch": 6, "train_loss": 0.09362874182350026, "lr": 4.1632183136785194e-05, "val_loss": 0.26683695588374745, "macro_f1_val": 0.8834441911323183, "top1_val": 0.9123107683518995, "seconds": 6.417874761857092}
+{"exp_id": "T00", "seed": 0, "epoch": 7, "train_loss": 0.05645321063106743, "lr": 2.527700158372548e-05, "val_loss": 0.21339001946876948, "macro_f1_val": 0.9076480118919404, "top1_val": 0.9317337903456155, "seconds": 6.5421960349194705}
+{"exp_id": "T00", "seed": 0, "epoch": 8, "train_loss": 0.03712296163345256, "lr": 1.1903778512265102e-05, "val_loss": 0.19714744861076233, "macro_f1_val": 0.9185140567858419, "top1_val": 0.9397315052842045, "seconds": 6.543479579966515}
+{"exp_id": "T00", "seed": 0, "epoch": 9, "train_loss": 0.028640253707857395, "lr": 3.1255219925744096e-06, "val_loss": 0.19830882139833816, "macro_f1_val": 0.9191377747698662, "top1_val": 0.9403027706369609, "seconds": 6.3924689730629325}
+{"exp_id": "T00", "seed": 0, "epoch": 10, "train_loss": 0.025917414314590576, "lr": 1.0193141965486596e-09, "val_loss": 0.199313685166022, "macro_f1_val": 0.9198726145096434, "top1_val": 0.9414453013424736, "seconds": 6.587160098832101}
+Unsupported operator aten::add encountered 25 time(s)
+Unsupported operator aten::scaled_dot_product_attention encountered 12 time(s)
+Unsupported operator aten::gelu encountered 12 time(s)
+The following submodules of the model were never called during the trace of the graph. They may be unused, or they were accessed by direct calls to .forward() or via other python methods. In the latter case they will have zeros for statistics, though their statistics will still contribute to their parent calling module.
+blocks.0.attn.attn_drop, blocks.1.attn.attn_drop, blocks.10.attn.attn_drop, blocks.11.attn.attn_drop, blocks.2.attn.attn_drop, blocks.3.attn.attn_drop, blocks.4.attn.attn_drop, blocks.5.attn.attn_drop, blocks.6.attn.attn_drop, blocks.7.attn.attn_drop, blocks.8.attn.attn_drop, blocks.9.attn.attn_drop
+{
+  "exp_id": "T00",
+  "seed": 0,
+  "backbone": "vit_tiny_patch16_224",
+  "pretrained_tag": "timm/vit_tiny_patch16_224.augreg_in21k_ft_in1k",
+  "params_m": 5.526153,
+  "best_epoch": 10,
+  "macro_f1_val": 0.9198726145096434,
+  "top1_val": 0.9414453013424736,
+  "ece_val": 0.016231422576179703,
+  "seconds_per_epoch": 6.590724352374673,
+  "gmac": 1.079389056
+}
+{"exp_id": "T01", "seed": 0, "epoch": 1, "train_loss": 1.4283845955278816, "lr": 0.0009817073170731707, "val_loss": 1.1118837953873684, "macro_f1_val": 0.4190369378871642, "top1_val": 0.6052556412453585, "seconds": 7.566580709069967}
+{"exp_id": "T01", "seed": 0, "epoch": 2, "train_loss": 0.8812085560909132, "lr": 0.000971285210304628, "val_loss": 0.9928713424040296, "macro_f1_val": 0.49957798908178713, "top1_val": 0.6555269922879178, "seconds": 7.359326787758619}
+{"exp_id": "T01", "seed": 0, "epoch": 3, "train_loss": 0.7679222883974633, "lr": 0.0008857445899109715, "val_loss": 0.8958428858757291, "macro_f1_val": 0.5575469326479465, "top1_val": 0.6883747500714081, "seconds": 7.4218634511344135}
+{"exp_id": "T01", "seed": 0, "epoch": 4, "train_loss": 0.7259953230982874, "lr": 0.0007536774789902246, "val_loss": 0.8422029367245051, "macro_f1_val": 0.5667878757436821, "top1_val": 0.6935161382462154, "seconds": 7.586530154105276}
+{"exp_id": "T01", "seed": 0, "epoch": 5, "train_loss": 0.6861653651406125, "lr": 0.0005910131202224011, "val_loss": 0.8365508109901469, "macro_f1_val": 0.5838292355876974, "top1_val": 0.7023707512139389, "seconds": 7.40512170875445}
+{"exp_id": "T01", "seed": 0, "epoch": 6, "train_loss": 0.6769535516093417, "lr": 0.0004173712359451576, "val_loss": 0.8364474032817995, "macro_f1_val": 0.5957673169639031, "top1_val": 0.7055127106540988, "seconds": 7.4856476918794215}
+{"exp_id": "T01", "seed": 0, "epoch": 7, "train_loss": 0.663536119388371, "lr": 0.00025369560008360825, "val_loss": 0.8118217321369724, "macro_f1_val": 0.5848052886715421, "top1_val": 0.7083690374178806, "seconds": 7.216445179190487}
+{"exp_id": "T01", "seed": 0, "epoch": 8, "train_loss": 0.6518457940802341, "lr": 0.0001197279099177731, "val_loss": 0.8062966824326983, "macro_f1_val": 0.5920934605830587, "top1_val": 0.7097972007997715, "seconds": 7.259764497168362}
+{"exp_id": "T01", "seed": 0, "epoch": 9, "train_loss": 0.6461559223329149, "lr": 3.162664603418608e-05, "val_loss": 0.8081767155387952, "macro_f1_val": 0.5940608010081745, "top1_val": 0.7109397315052842, "seconds": 7.187383497133851}
+{"exp_id": "T01", "seed": 0, "epoch": 10, "train_loss": 0.6418169226224829, "lr": 1.812109338367174e-08, "val_loss": 0.8088895450725245, "macro_f1_val": 0.5938435746311982, "top1_val": 0.7109397315052842, "seconds": 7.1122998939827085}
+Unsupported operator aten::add encountered 25 time(s)
+Unsupported operator aten::scaled_dot_product_attention encountered 12 time(s)
+Unsupported operator aten::gelu encountered 12 time(s)
+The following submodules of the model were never called during the trace of the graph. They may be unused, or they were accessed by direct calls to .forward() or via other python methods. In the latter case they will have zeros for statistics, though their statistics will still contribute to their parent calling module.
+blocks.0.attn.attn_drop, blocks.1.attn.attn_drop, blocks.10.attn.attn_drop, blocks.11.attn.attn_drop, blocks.2.attn.attn_drop, blocks.3.attn.attn_drop, blocks.4.attn.attn_drop, blocks.5.attn.attn_drop, blocks.6.attn.attn_drop, blocks.7.attn.attn_drop, blocks.8.attn.attn_drop, blocks.9.attn.attn_drop
+{
+  "exp_id": "T01",
+  "seed": 0,
+  "backbone": "vit_tiny_patch16_224",
+  "pretrained_tag": "timm/vit_tiny_patch16_224.augreg_in21k_ft_in1k",
+  "params_m": 5.526153,
+  "best_epoch": 6,
+  "macro_f1_val": 0.5957673169639031,
+  "top1_val": 0.7055127106540988,
+  "ece_val": 0.029231095409366078,
+  "seconds_per_epoch": 7.360096357017755,
+  "gmac": 1.079389056
+}
+{"exp_id": "T02", "seed": 0, "epoch": 1, "train_loss": 1.5555409803623106, "lr": 0.0001, "val_loss": 1.3990074858873853, "macro_f1_val": 0.23250783126890426, "top1_val": 0.5144244501570979, "seconds": 7.9084405093453825}
+{"exp_id": "T02", "seed": 0, "epoch": 2, "train_loss": 1.3073203083945484, "lr": 9.70209232285575e-05, "val_loss": 1.2772182302112682, "macro_f1_val": 0.31481510146798813, "top1_val": 0.5566980862610683, "seconds": 7.0423960499465466}
+{"exp_id": "T02", "seed": 0, "epoch": 3, "train_loss": 1.1488896492050915, "lr": 8.83705424183074e-05, "val_loss": 1.0947181537334527, "macro_f1_val": 0.40186149007755123, "top1_val": 0.610968294772922, "seconds": 7.024209665134549}
+{"exp_id": "T02", "seed": 0, "epoch": 4, "train_loss": 1.0404201956783854, "lr": 7.50921079035148e-05, "val_loss": 1.0941000906136062, "macro_f1_val": 0.44949462505053245, "top1_val": 0.6169665809768637, "seconds": 7.282836643047631}
+{"exp_id": "T02", "seed": 0, "epoch": 5, "train_loss": 0.958144832311607, "lr": 5.878719485548585e-05, "val_loss": 1.0798169926417551, "macro_f1_val": 0.47593624780507704, "top1_val": 0.6218223364752927, "seconds": 7.345513224601746}
+{"exp_id": "T02", "seed": 0, "epoch": 6, "train_loss": 0.8878402564583755, "lr": 4.142241642270108e-05, "val_loss": 0.9245535835849323, "macro_f1_val": 0.5742506299480088, "top1_val": 0.6835189945729792, "seconds": 7.1469257841818035}
+{"exp_id": "T02", "seed": 0, "epoch": 7, "train_loss": 0.8153203729449249, "lr": 2.5092221160989803e-05, "val_loss": 0.9089020329759789, "macro_f1_val": 0.5779976558005979, "top1_val": 0.68808911739503, "seconds": 7.429848894942552}
+{"exp_id": "T02", "seed": 0, "epoch": 8, "train_loss": 0.745780357136959, "lr": 1.1766271626928338e-05, "val_loss": 0.8853069690934796, "macro_f1_val": 0.5891806653982365, "top1_val": 0.7015138531848043, "seconds": 7.405275148805231}
+{"exp_id": "T02", "seed": 0, "epoch": 9, "train_loss": 0.7106646998989873, "lr": 3.05187400439369e-06, "val_loss": 0.8437667109734056, "macro_f1_val": 0.6015149095585953, "top1_val": 0.7106540988289061, "seconds": 7.471093764062971}
+{"exp_id": "T02", "seed": 0, "epoch": 10, "train_loss": 0.6873365388047404, "lr": 1e-09, "val_loss": 0.858925687657258, "macro_f1_val": 0.6049196096084902, "top1_val": 0.7080834047415024, "seconds": 7.460376738104969}
+Unsupported operator aten::add encountered 25 time(s)
+Unsupported operator aten::scaled_dot_product_attention encountered 12 time(s)
+Unsupported operator aten::gelu encountered 12 time(s)
+The following submodules of the model were never called during the trace of the graph. They may be unused, or they were accessed by direct calls to .forward() or via other python methods. In the latter case they will have zeros for statistics, though their statistics will still contribute to their parent calling module.
+blocks.0.attn.attn_drop, blocks.1.attn.attn_drop, blocks.10.attn.attn_drop, blocks.11.attn.attn_drop, blocks.2.attn.attn_drop, blocks.3.attn.attn_drop, blocks.4.attn.attn_drop, blocks.5.attn.attn_drop, blocks.6.attn.attn_drop, blocks.7.attn.attn_drop, blocks.8.attn.attn_drop, blocks.9.attn.attn_drop
+{
+  "exp_id": "T02",
+  "seed": 0,
+  "backbone": "vit_tiny_patch16_224",
+  "pretrained_tag": "scratch",
+  "params_m": 5.526153,
+  "best_epoch": 10,
+  "macro_f1_val": 0.6049196096084902,
+  "top1_val": 0.7080834047415024,
+  "ece_val": 0.022034168677546567,
+  "seconds_per_epoch": 7.351691642217338,
+  "gmac": 1.079389056
+}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{"exp_id": "T03", "seed": 0, "epoch": 1, "train_loss": 1.0558486684429935, "lr": 9.878048780487805e-05, "val_loss": 0.5403018517345743, "macro_f1_val": 0.7252195898210071, "top1_val": 0.8069123107683519, "seconds": 14.933239260222763}
+{"exp_id": "T03", "seed": 0, "epoch": 2, "train_loss": 0.43004669030992, "lr": 9.709286838710774e-05, "val_loss": 0.3186359755977907, "macro_f1_val": 0.8593058048185723, "top1_val": 0.8940302770636961, "seconds": 14.200947768054903}
+{"exp_id": "T03", "seed": 0, "epoch": 3, "train_loss": 0.2972508040597526, "lr": 8.850666114421079e-05, "val_loss": 0.3674877918862983, "macro_f1_val": 0.8435118796379469, "top1_val": 0.8828906026849471, "seconds": 14.029230501968414}
+{"exp_id": "T03", "seed": 0, "epoch": 4, "train_loss": 0.22410394146856738, "lr": 7.527598226952894e-05, "val_loss": 0.2972408569870387, "macro_f1_val": 0.8772561500940673, "top1_val": 0.9037417880605542, "seconds": 14.173467417247593}
+{"exp_id": "T03", "seed": 0, "epoch": 5, "train_loss": 0.16438770331669508, "lr": 5.899664689937283e-05, "val_loss": 0.25391136116213336, "macro_f1_val": 0.8922889849929416, "top1_val": 0.9200228506141103, "seconds": 14.409697152208537}
+{"exp_id": "T03", "seed": 0, "epoch": 6, "train_loss": 0.12492281430196471, "lr": 4.1632183136785194e-05, "val_loss": 0.24804942487342396, "macro_f1_val": 0.8918748469191736, "top1_val": 0.919451585261354, "seconds": 14.350097201298922}
+{"exp_id": "T03", "seed": 0, "epoch": 7, "train_loss": 0.09017172174119367, "lr": 2.527700158372548e-05, "val_loss": 0.20792142705078365, "macro_f1_val": 0.9126409200736414, "top1_val": 0.9328763210511283, "seconds": 14.220477096736431}
+{"exp_id": "T03", "seed": 0, "epoch": 8, "train_loss": 0.06707284338317993, "lr": 1.1903778512265102e-05, "val_loss": 0.19817588917359868, "macro_f1_val": 0.9150103100047813, "top1_val": 0.9345901171093973, "seconds": 14.251465422101319}
+{"exp_id": "T03", "seed": 0, "epoch": 9, "train_loss": 0.05648460332304239, "lr": 3.1255219925744096e-06, "val_loss": 0.1963228612959436, "macro_f1_val": 0.9191335339460814, "top1_val": 0.9383033419023136, "seconds": 14.282144371885806}
+{"exp_id": "T03", "seed": 0, "epoch": 10, "train_loss": 0.04755151133257442, "lr": 1.0193141965486596e-09, "val_loss": 0.19541379026228003, "macro_f1_val": 0.9213558573333853, "top1_val": 0.9397315052842045, "seconds": 14.35795554285869}
+Unsupported operator aten::add encountered 25 time(s)
+Unsupported operator aten::scaled_dot_product_attention encountered 12 time(s)
+Unsupported operator aten::gelu encountered 12 time(s)
+The following submodules of the model were never called during the trace of the graph. They may be unused, or they were accessed by direct calls to .forward() or via other python methods. In the latter case they will have zeros for statistics, though their statistics will still contribute to their parent calling module.
+blocks.0.attn.attn_drop, blocks.1.attn.attn_drop, blocks.10.attn.attn_drop, blocks.11.attn.attn_drop, blocks.2.attn.attn_drop, blocks.3.attn.attn_drop, blocks.4.attn.attn_drop, blocks.5.attn.attn_drop, blocks.6.attn.attn_drop, blocks.7.attn.attn_drop, blocks.8.attn.attn_drop, blocks.9.attn.attn_drop
+{
+  "exp_id": "T03",
+  "seed": 0,
+  "backbone": "vit_tiny_patch16_224",
+  "pretrained_tag": "timm/vit_tiny_patch16_224.augreg_in21k_ft_in1k",
+  "params_m": 5.526153,
+  "best_epoch": 10,
+  "macro_f1_val": 0.9213558573333853,
+  "top1_val": 0.9397315052842045,
+  "ece_val": 0.0148589183554858,
+  "seconds_per_epoch": 14.320872173458337,
+  "gmac": 1.079389056
+}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{"exp_id": "T04", "seed": 0, "epoch": 1, "train_loss": 1.1058242891619845, "lr": 9.878048780487805e-05, "val_loss": 0.58547219464657, "macro_f1_val": 0.6969748529666905, "top1_val": 0.792630676949443, "seconds": 9.377261042129248}
+{"exp_id": "T04", "seed": 0, "epoch": 2, "train_loss": 0.4824961872725952, "lr": 9.709286838710774e-05, "val_loss": 0.3813424799756233, "macro_f1_val": 0.8293358830709433, "top1_val": 0.8651813767495001, "seconds": 8.34393479116261}
+{"exp_id": "T04", "seed": 0, "epoch": 3, "train_loss": 0.3455958668051696, "lr": 8.850666114421079e-05, "val_loss": 0.4059834841301495, "macro_f1_val": 0.8157664950816379, "top1_val": 0.8660382747786347, "seconds": 8.233924197033048}
+{"exp_id": "T04", "seed": 0, "epoch": 4, "train_loss": 0.28380049510699945, "lr": 7.527598226952894e-05, "val_loss": 0.3046544702078267, "macro_f1_val": 0.8672422823953891, "top1_val": 0.9000285632676378, "seconds": 8.289384854026139}
+{"exp_id": "T04", "seed": 0, "epoch": 5, "train_loss": 0.21837680439305743, "lr": 5.899664689937283e-05, "val_loss": 0.2506464943906914, "macro_f1_val": 0.8881175487556154, "top1_val": 0.9160239931448158, "seconds": 8.415507451165468}
+{"exp_id": "T04", "seed": 0, "epoch": 6, "train_loss": 0.1783232153506904, "lr": 4.1632183136785194e-05, "val_loss": 0.23185944427799682, "macro_f1_val": 0.8936453703964704, "top1_val": 0.9180234218794631, "seconds": 8.481261522043496}
+{"exp_id": "T04", "seed": 0, "epoch": 7, "train_loss": 0.1317162212870288, "lr": 2.527700158372548e-05, "val_loss": 0.2099455168283997, "macro_f1_val": 0.9090790340295993, "top1_val": 0.9314481576692374, "seconds": 8.305909866001457}
+{"exp_id": "T04", "seed": 0, "epoch": 8, "train_loss": 0.10816561878181813, "lr": 1.1903778512265102e-05, "val_loss": 0.18338560115283165, "macro_f1_val": 0.9268747288514996, "top1_val": 0.9425878320479862, "seconds": 8.098499335814267}
+{"exp_id": "T04", "seed": 0, "epoch": 9, "train_loss": 0.09161674738975197, "lr": 3.1255219925744096e-06, "val_loss": 0.18143447823301107, "macro_f1_val": 0.9218250547992182, "top1_val": 0.940588403313339, "seconds": 8.380941364914179}
+{"exp_id": "T04", "seed": 0, "epoch": 10, "train_loss": 0.08507389988659358, "lr": 1.0193141965486596e-09, "val_loss": 0.18016420185174373, "macro_f1_val": 0.9237776560031441, "top1_val": 0.9420165666952299, "seconds": 8.16907837567851}
+Unsupported operator aten::add encountered 25 time(s)
+Unsupported operator aten::scaled_dot_product_attention encountered 12 time(s)
+Unsupported operator aten::gelu encountered 12 time(s)
+The following submodules of the model were never called during the trace of the graph. They may be unused, or they were accessed by direct calls to .forward() or via other python methods. In the latter case they will have zeros for statistics, though their statistics will still contribute to their parent calling module.
+blocks.0.attn.attn_drop, blocks.1.attn.attn_drop, blocks.10.attn.attn_drop, blocks.11.attn.attn_drop, blocks.2.attn.attn_drop, blocks.3.attn.attn_drop, blocks.4.attn.attn_drop, blocks.5.attn.attn_drop, blocks.6.attn.attn_drop, blocks.7.attn.attn_drop, blocks.8.attn.attn_drop, blocks.9.attn.attn_drop
+{
+  "exp_id": "T04",
+  "seed": 0,
+  "backbone": "vit_tiny_patch16_224",
+  "pretrained_tag": "timm/vit_tiny_patch16_224.augreg_in21k_ft_in1k",
+  "params_m": 5.526153,
+  "best_epoch": 8,
+  "macro_f1_val": 0.9268747288514996,
+  "top1_val": 0.9425878320479862,
+  "ece_val": 0.0135802603115255,
+  "seconds_per_epoch": 8.409570279996842,
+  "gmac": 1.079389056
+}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{"exp_id": "T05", "seed": 0, "epoch": 1, "train_loss": 1.2676883249021158, "lr": 9.878048780487805e-05, "val_loss": 0.73500369196788, "macro_f1_val": 0.6954613164902425, "top1_val": 0.7820622679234505, "seconds": 7.042820428032428}
+{"exp_id": "T05", "seed": 0, "epoch": 2, "train_loss": 0.7925619283100453, "lr": 9.709286838710774e-05, "val_loss": 0.4879348874432603, "macro_f1_val": 0.8015204169889354, "top1_val": 0.8540417023707512, "seconds": 6.415891872253269}
+{"exp_id": "T05", "seed": 0, "epoch": 3, "train_loss": 0.6830928703633751, "lr": 8.850666114421079e-05, "val_loss": 0.5903166357328877, "macro_f1_val": 0.7523985750081975, "top1_val": 0.8189088831762353, "seconds": 6.2641985500231385}
+{"exp_id": "T05", "seed": 0, "epoch": 4, "train_loss": 0.6400759816169739, "lr": 7.527598226952894e-05, "val_loss": 0.37260976626136855, "macro_f1_val": 0.8651551938813892, "top1_val": 0.8997429305912596, "seconds": 6.252636048011482}
+{"exp_id": "T05", "seed": 0, "epoch": 5, "train_loss": 0.5962177191565676, "lr": 5.899664689937283e-05, "val_loss": 0.3646765917462984, "macro_f1_val": 0.8665545706674427, "top1_val": 0.9034561553841759, "seconds": 6.480558961164206}
+{"exp_id": "T05", "seed": 0, "epoch": 6, "train_loss": 0.5718480879213752, "lr": 4.1632183136785194e-05, "val_loss": 0.3346650223924718, "macro_f1_val": 0.8827659965466319, "top1_val": 0.9140245644101685, "seconds": 6.500964791048318}
+{"exp_id": "T05", "seed": 0, "epoch": 7, "train_loss": 0.5487303424899171, "lr": 2.527700158372548e-05, "val_loss": 0.2957889304284333, "macro_f1_val": 0.9029630428770611, "top1_val": 0.927734932876321, "seconds": 6.451406455598772}
+{"exp_id": "T05", "seed": 0, "epoch": 8, "train_loss": 0.5294292385621768, "lr": 1.1903778512265102e-05, "val_loss": 0.2793264156390993, "macro_f1_val": 0.9099255765910121, "top1_val": 0.9323050556983719, "seconds": 6.374586342368275}
+{"exp_id": "T05", "seed": 0, "epoch": 9, "train_loss": 0.5234875648123462, "lr": 3.1255219925744096e-06, "val_loss": 0.2861390058669456, "macro_f1_val": 0.9102741118993054, "top1_val": 0.9328763210511283, "seconds": 6.267298325896263}
+{"exp_id": "T05", "seed": 0, "epoch": 10, "train_loss": 0.5205845511177691, "lr": 1.0193141965486596e-09, "val_loss": 0.2855624296739421, "macro_f1_val": 0.908544176594432, "top1_val": 0.9323050556983719, "seconds": 6.0980221456848085}
+Unsupported operator aten::add encountered 25 time(s)
+Unsupported operator aten::scaled_dot_product_attention encountered 12 time(s)
+Unsupported operator aten::gelu encountered 12 time(s)
+The following submodules of the model were never called during the trace of the graph. They may be unused, or they were accessed by direct calls to .forward() or via other python methods. In the latter case they will have zeros for statistics, though their statistics will still contribute to their parent calling module.
+blocks.0.attn.attn_drop, blocks.1.attn.attn_drop, blocks.10.attn.attn_drop, blocks.11.attn.attn_drop, blocks.2.attn.attn_drop, blocks.3.attn.attn_drop, blocks.4.attn.attn_drop, blocks.5.attn.attn_drop, blocks.6.attn.attn_drop, blocks.7.attn.attn_drop, blocks.8.attn.attn_drop, blocks.9.attn.attn_drop
+{
+  "exp_id": "T05",
+  "seed": 0,
+  "backbone": "vit_tiny_patch16_224",
+  "pretrained_tag": "timm/vit_tiny_patch16_224.augreg_in21k_ft_in1k",
+  "params_m": 5.526153,
+  "best_epoch": 9,
+  "macro_f1_val": 0.9102741118993054,
+  "top1_val": 0.9328763210511283,
+  "ece_val": 0.08612234678073667,
+  "seconds_per_epoch": 6.414838392008096,
+  "gmac": 1.079389056
+}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{"exp_id": "T06", "seed": 0, "epoch": 1, "train_loss": 0.6510903261056761, "lr": 9.817073170731708e-05, "val_loss": 0.7672134424849464, "macro_f1_val": 0.6266761785390624, "top1_val": 0.7335047129391602, "seconds": 7.210777326952666}
+{"exp_id": "T06", "seed": 0, "epoch": 2, "train_loss": 0.19920083330717028, "lr": 9.71285210304628e-05, "val_loss": 0.48833514106031894, "macro_f1_val": 0.8034790681995024, "top1_val": 0.8508997429305912, "seconds": 6.733823714312166}
+{"exp_id": "T06", "seed": 0, "epoch": 3, "train_loss": 0.12546963251491144, "lr": 8.857445899109715e-05, "val_loss": 0.5193340805931386, "macro_f1_val": 0.7627168171555208, "top1_val": 0.824907169380177, "seconds": 6.6705270749516785}
+{"exp_id": "T06", "seed": 0, "epoch": 4, "train_loss": 0.09546748022321702, "lr": 7.536774789902246e-05, "val_loss": 0.3265189200052361, "macro_f1_val": 0.8599518828950168, "top1_val": 0.8968866038274779, "seconds": 6.489132567774504}
+{"exp_id": "T06", "seed": 0, "epoch": 5, "train_loss": 0.05989958346457925, "lr": 5.9101312022240106e-05, "val_loss": 0.31700265968537134, "macro_f1_val": 0.8590546822468315, "top1_val": 0.8980291345329906, "seconds": 6.796932502184063}
+{"exp_id": "T06", "seed": 0, "epoch": 6, "train_loss": 0.04337941947756562, "lr": 4.1737123594515756e-05, "val_loss": 0.33162053837261346, "macro_f1_val": 0.8585018530032499, "top1_val": 0.8917452156526706, "seconds": 6.642934292089194}
+{"exp_id": "T06", "seed": 0, "epoch": 7, "train_loss": 0.0262730921087673, "lr": 2.5369560008360828e-05, "val_loss": 0.2519710029628882, "macro_f1_val": 0.8959405547761035, "top1_val": 0.922879177377892, "seconds": 6.435338826850057}
+{"exp_id": "T06", "seed": 0, "epoch": 8, "train_loss": 0.018069261996637713, "lr": 1.1972790991777311e-05, "val_loss": 0.24128161234128342, "macro_f1_val": 0.9009176331404907, "top1_val": 0.9251642387889174, "seconds": 6.3269291669130325}
+{"exp_id": "T06", "seed": 0, "epoch": 9, "train_loss": 0.011614587086269905, "lr": 3.162664603418608e-06, "val_loss": 0.24496369785290042, "macro_f1_val": 0.9007289064905221, "top1_val": 0.9254498714652957, "seconds": 6.691749162040651}
+{"exp_id": "T06", "seed": 0, "epoch": 10, "train_loss": 0.012267226592152061, "lr": 1.8121093383671738e-09, "val_loss": 0.24763533137621657, "macro_f1_val": 0.8983012424156644, "top1_val": 0.9237360754070265, "seconds": 6.647497500292957}
+Unsupported operator aten::add encountered 25 time(s)
+Unsupported operator aten::scaled_dot_product_attention encountered 12 time(s)
+Unsupported operator aten::gelu encountered 12 time(s)
+The following submodules of the model were never called during the trace of the graph. They may be unused, or they were accessed by direct calls to .forward() or via other python methods. In the latter case they will have zeros for statistics, though their statistics will still contribute to their parent calling module.
+blocks.0.attn.attn_drop, blocks.1.attn.attn_drop, blocks.10.attn.attn_drop, blocks.11.attn.attn_drop, blocks.2.attn.attn_drop, blocks.3.attn.attn_drop, blocks.4.attn.attn_drop, blocks.5.attn.attn_drop, blocks.6.attn.attn_drop, blocks.7.attn.attn_drop, blocks.8.attn.attn_drop, blocks.9.attn.attn_drop
+{
+  "exp_id": "T06",
+  "seed": 0,
+  "backbone": "vit_tiny_patch16_224",
+  "pretrained_tag": "timm/vit_tiny_patch16_224.augreg_in21k_ft_in1k",
+  "params_m": 5.526153,
+  "best_epoch": 8,
+  "macro_f1_val": 0.9009176331404907,
+  "top1_val": 0.9251642387889174,
+  "ece_val": 0.04388751934440231,
+  "seconds_per_epoch": 6.664564213436097,
+  "gmac": 1.079389056
+}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{"exp_id": "F00", "seed": 0, "epoch": 1, "train_loss": 0.9895550499602062, "lr": 9.878048780487805e-05, "val_loss": 0.7246564578683129, "macro_f1_val": 0.657863158330587, "top1_val": 0.7369323050556984, "seconds": 7.3087289007380605}
+{"exp_id": "F00", "seed": 0, "epoch": 2, "train_loss": 0.3791145432467868, "lr": 9.804758750336013e-05, "val_loss": 0.45577720091942886, "macro_f1_val": 0.7863165401292558, "top1_val": 0.8486146815195659, "seconds": 6.8611138397827744}
+{"exp_id": "F00", "seed": 0, "epoch": 3, "train_loss": 0.23839518754947475, "lr": 9.220332756879578e-05, "val_loss": 0.5672146121933269, "macro_f1_val": 0.7481210306574948, "top1_val": 0.8117680662667809, "seconds": 6.641438545193523}
+{"exp_id": "F00", "seed": 0, "epoch": 4, "train_loss": 0.18626850811628307, "lr": 8.294000502746098e-05, "val_loss": 0.2697836704311695, "macro_f1_val": 0.8809626642123535, "top1_val": 0.9088831762353613, "seconds": 6.38288939697668}
+{"exp_id": "F00", "seed": 0, "epoch": 5, "train_loss": 0.13677614488888803, "lr": 7.100807918055428e-05, "val_loss": 0.3058838378239005, "macro_f1_val": 0.8580171706387054, "top1_val": 0.8986003998857469, "seconds": 6.782006918918341}
+{"exp_id": "F00", "seed": 0, "epoch": 6, "train_loss": 0.1115177292036029, "lr": 5.737420369829669e-05, "val_loss": 0.3116542516146957, "macro_f1_val": 0.8622916104735491, "top1_val": 0.8974578691802342, "seconds": 6.7580375713296235}
+{"exp_id": "F00", "seed": 0, "epoch": 7, "train_loss": 0.06603191987179764, "lr": 4.314291408848116e-05, "val_loss": 0.22109114712594202, "macro_f1_val": 0.9082399239743223, "top1_val": 0.9317337903456155, "seconds": 6.572782558854669}
+{"exp_id": "F00", "seed": 0, "epoch": 8, "train_loss": 0.04748690081760287, "lr": 2.9467144798556745e-05, "val_loss": 0.22173443940563634, "macro_f1_val": 0.9073404028991217, "top1_val": 0.9291630962582119, "seconds": 6.629384248983115}
+{"exp_id": "F00", "seed": 0, "epoch": 9, "train_loss": 0.03410038177105712, "lr": 1.7454825323461448e-05, "val_loss": 0.2192171071340819, "macro_f1_val": 0.9091651327253766, "top1_val": 0.9294487289345901, "seconds": 6.569441394880414}
+{"exp_id": "F00", "seed": 0, "epoch": 10, "train_loss": 0.024747839981190314, "lr": 8.079122347052826e-06, "val_loss": 0.20589442627748672, "macro_f1_val": 0.9155145147808474, "top1_val": 0.9363039131676664, "seconds": 6.693555219564587}
+{"exp_id": "F00", "seed": 0, "epoch": 11, "train_loss": 0.02022813646713408, "lr": 2.0995995650269274e-06, "val_loss": 0.20108899072353176, "macro_f1_val": 0.9172182767935733, "top1_val": 0.9383033419023136, "seconds": 6.692108944058418}
+{"exp_id": "F00", "seed": 0, "epoch": 12, "train_loss": 0.016196620945886867, "lr": 1e-09, "val_loss": 0.1977138971599706, "macro_f1_val": 0.918270992883581, "top1_val": 0.9385889745786918, "seconds": 6.812185764778405}
+Unsupported operator aten::add encountered 25 time(s)
+Unsupported operator aten::scaled_dot_product_attention encountered 12 time(s)
+Unsupported operator aten::gelu encountered 12 time(s)
+The following submodules of the model were never called during the trace of the graph. They may be unused, or they were accessed by direct calls to .forward() or via other python methods. In the latter case they will have zeros for statistics, though their statistics will still contribute to their parent calling module.
+blocks.0.attn.attn_drop, blocks.1.attn.attn_drop, blocks.10.attn.attn_drop, blocks.11.attn.attn_drop, blocks.2.attn.attn_drop, blocks.3.attn.attn_drop, blocks.4.attn.attn_drop, blocks.5.attn.attn_drop, blocks.6.attn.attn_drop, blocks.7.attn.attn_drop, blocks.8.attn.attn_drop, blocks.9.attn.attn_drop
+{
+  "exp_id": "F00",
+  "seed": 0,
+  "backbone": "vit_tiny_patch16_224",
+  "pretrained_tag": "timm/vit_tiny_patch16_224.augreg_in21k_ft_in1k",
+  "params_m": 5.526153,
+  "best_epoch": 12,
+  "macro_f1_val": 0.918270992883581,
+  "top1_val": 0.9385889745786918,
+  "ece_val": 0.020168386206086145,
+  "seconds_per_epoch": 6.725306108671551,
+  "gmac": 1.079389056
+}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{"exp_id": "F00", "seed": 1, "epoch": 1, "train_loss": 1.1302346376384176, "lr": 9.817073170731708e-05, "val_loss": 0.5455308696502483, "macro_f1_val": 0.7341110080314268, "top1_val": 0.8077692087974865, "seconds": 8.01486747013405}
+{"exp_id": "F00", "seed": 1, "epoch": 2, "train_loss": 0.367627917448195, "lr": 9.807160911620484e-05, "val_loss": 0.3685690624412214, "macro_f1_val": 0.8368149174907041, "top1_val": 0.8726078263353327, "seconds": 7.426636463031173}
+{"exp_id": "F00", "seed": 1, "epoch": 3, "train_loss": 0.2524309114257737, "lr": 9.22499554220336e-05, "val_loss": 0.34412504645355496, "macro_f1_val": 0.8480120669194832, "top1_val": 0.8888888888888888, "seconds": 7.440723563078791}
+{"exp_id": "F00", "seed": 1, "epoch": 4, "train_loss": 0.18040539276581713, "lr": 8.30054616097291e-05, "val_loss": 0.2987947903575641, "macro_f1_val": 0.8702271573230957, "top1_val": 0.9008854612967724, "seconds": 7.157276829704642}
+{"exp_id": "F00", "seed": 1, "epoch": 5, "train_loss": 0.14261437854843168, "lr": 7.108706158884265e-05, "val_loss": 0.2501684421983592, "macro_f1_val": 0.8909708794224466, "top1_val": 0.9128820337046558, "seconds": 7.513169264886528}
+{"exp_id": "F00", "seed": 1, "epoch": 6, "train_loss": 0.09890203151806462, "lr": 5.746031324761225e-05, "val_loss": 0.25422684068561996, "macro_f1_val": 0.886489353254515, "top1_val": 0.914881462439303, "seconds": 7.260581082198769}
+{"exp_id": "F00", "seed": 1, "epoch": 7, "train_loss": 0.07099339217174708, "lr": 4.322917469525155e-05, "val_loss": 0.21625636551200372, "macro_f1_val": 0.9075141757149281, "top1_val": 0.9297343616109683, "seconds": 7.4004698460921645}
+{"exp_id": "F00", "seed": 1, "epoch": 8, "train_loss": 0.05126669360097588, "lr": 2.9546568141433006e-05, "val_loss": 0.19689062159850032, "macro_f1_val": 0.9172835109565882, "top1_val": 0.9394458726078263, "seconds": 6.9001628258265555}
+{"exp_id": "F00", "seed": 1, "epoch": 9, "train_loss": 0.034814765279340305, "lr": 1.752097699555258e-05, "val_loss": 0.19728797440084855, "macro_f1_val": 0.9182872012068124, "top1_val": 0.93887460725507, "seconds": 7.193122257012874}
+{"exp_id": "F00", "seed": 1, "epoch": 10, "train_loss": 0.02505761714334168, "lr": 8.12664313330514e-06, "val_loss": 0.17807493716163383, "macro_f1_val": 0.924028045487565, "top1_val": 0.9434447300771208, "seconds": 7.120166866574436}
+{"exp_id": "F00", "seed": 1, "epoch": 11, "train_loss": 0.02005511742630383, "lr": 2.1246396139552426e-06, "val_loss": 0.17542283005439974, "macro_f1_val": 0.9256573564786323, "top1_val": 0.9445872607826336, "seconds": 7.364622799679637}
+{"exp_id": "F00", "seed": 1, "epoch": 12, "train_loss": 0.01974848353462975, "lr": 1.2130673512744661e-09, "val_loss": 0.17641973524000332, "macro_f1_val": 0.9229759631309393, "top1_val": 0.9428734647243645, "seconds": 7.055473725777119}
+Unsupported operator aten::add encountered 25 time(s)
+Unsupported operator aten::scaled_dot_product_attention encountered 12 time(s)
+Unsupported operator aten::gelu encountered 12 time(s)
+The following submodules of the model were never called during the trace of the graph. They may be unused, or they were accessed by direct calls to .forward() or via other python methods. In the latter case they will have zeros for statistics, though their statistics will still contribute to their parent calling module.
+blocks.0.attn.attn_drop, blocks.1.attn.attn_drop, blocks.10.attn.attn_drop, blocks.11.attn.attn_drop, blocks.2.attn.attn_drop, blocks.3.attn.attn_drop, blocks.4.attn.attn_drop, blocks.5.attn.attn_drop, blocks.6.attn.attn_drop, blocks.7.attn.attn_drop, blocks.8.attn.attn_drop, blocks.9.attn.attn_drop
+{
+  "exp_id": "F00",
+  "seed": 1,
+  "backbone": "vit_tiny_patch16_224",
+  "pretrained_tag": "timm/vit_tiny_patch16_224.augreg_in21k_ft_in1k",
+  "params_m": 5.526153,
+  "best_epoch": 11,
+  "macro_f1_val": 0.9256573564786323,
+  "top1_val": 0.9445872607826336,
+  "ece_val": 0.017743092269701374,
+  "seconds_per_epoch": 7.320606082833062,
+  "gmac": 1.079389056
+}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{"exp_id": "F00", "seed": 2, "epoch": 1, "train_loss": 1.019115075105574, "lr": 9.878048780487805e-05, "val_loss": 0.5503179895745043, "macro_f1_val": 0.7336264912378647, "top1_val": 0.8069123107683519, "seconds": 7.858151682186872}
+{"exp_id": "F00", "seed": 2, "epoch": 2, "train_loss": 0.3631828497277527, "lr": 9.804758750336013e-05, "val_loss": 0.3736737877751922, "macro_f1_val": 0.8245329784562734, "top1_val": 0.87146529562982, "seconds": 6.811856553889811}
+{"exp_id": "F00", "seed": 2, "epoch": 3, "train_loss": 0.24210665911072637, "lr": 9.220332756879578e-05, "val_loss": 0.26561802795055217, "macro_f1_val": 0.8790172958946909, "top1_val": 0.9088831762353613, "seconds": 6.809121038764715}
+{"exp_id": "F00", "seed": 2, "epoch": 4, "train_loss": 0.18919403405814636, "lr": 8.294000502746098e-05, "val_loss": 0.3082408872043293, "macro_f1_val": 0.8666973101492577, "top1_val": 0.9014567266495287, "seconds": 7.19863932672888}
+{"exp_id": "F00", "seed": 2, "epoch": 5, "train_loss": 0.13677448365928196, "lr": 7.100807918055428e-05, "val_loss": 0.2857138486214618, "macro_f1_val": 0.8718797860452115, "top1_val": 0.9048843187660668, "seconds": 7.374911581166089}
+{"exp_id": "F00", "seed": 2, "epoch": 6, "train_loss": 0.1006387655350675, "lr": 5.737420369829669e-05, "val_loss": 0.23624408543450395, "macro_f1_val": 0.887398235603052, "top1_val": 0.9174521565267066, "seconds": 7.408407866023481}
+{"exp_id": "F00", "seed": 2, "epoch": 7, "train_loss": 0.07190285725291909, "lr": 4.314291408848116e-05, "val_loss": 0.22226375695110492, "macro_f1_val": 0.9045837400448663, "top1_val": 0.9280205655526992, "seconds": 6.401781474240124}
+{"exp_id": "F00", "seed": 2, "epoch": 8, "train_loss": 0.049285768145104734, "lr": 2.9467144798556745e-05, "val_loss": 0.21998501531151968, "macro_f1_val": 0.9054109823894392, "top1_val": 0.9288774635818338, "seconds": 6.459023760166019}
+{"exp_id": "F00", "seed": 2, "epoch": 9, "train_loss": 0.033237222400380344, "lr": 1.7454825323461448e-05, "val_loss": 0.2152870601520338, "macro_f1_val": 0.9091477711136646, "top1_val": 0.9325906883747501, "seconds": 6.4657833417877555}
+{"exp_id": "F00", "seed": 2, "epoch": 10, "train_loss": 0.02689707512035966, "lr": 8.079122347052826e-06, "val_loss": 0.20060757980478452, "macro_f1_val": 0.9179716278415646, "top1_val": 0.9385889745786918, "seconds": 6.540520726237446}
+{"exp_id": "F00", "seed": 2, "epoch": 11, "train_loss": 0.022294668548899454, "lr": 2.0995995650269274e-06, "val_loss": 0.18978457095596798, "macro_f1_val": 0.9206273664819835, "top1_val": 0.9414453013424736, "seconds": 6.528587969020009}
+{"exp_id": "F00", "seed": 2, "epoch": 12, "train_loss": 0.020806414824796886, "lr": 1e-09, "val_loss": 0.19273031253332548, "macro_f1_val": 0.9200473812002916, "top1_val": 0.9411596686660954, "seconds": 6.621927043888718}
+Unsupported operator aten::add encountered 25 time(s)
+Unsupported operator aten::scaled_dot_product_attention encountered 12 time(s)
+Unsupported operator aten::gelu encountered 12 time(s)
+The following submodules of the model were never called during the trace of the graph. They may be unused, or they were accessed by direct calls to .forward() or via other python methods. In the latter case they will have zeros for statistics, though their statistics will still contribute to their parent calling module.
+blocks.0.attn.attn_drop, blocks.1.attn.attn_drop, blocks.10.attn.attn_drop, blocks.11.attn.attn_drop, blocks.2.attn.attn_drop, blocks.3.attn.attn_drop, blocks.4.attn.attn_drop, blocks.5.attn.attn_drop, blocks.6.attn.attn_drop, blocks.7.attn.attn_drop, blocks.8.attn.attn_drop, blocks.9.attn.attn_drop
+{
+  "exp_id": "F00",
+  "seed": 2,
+  "backbone": "vit_tiny_patch16_224",
+  "pretrained_tag": "timm/vit_tiny_patch16_224.augreg_in21k_ft_in1k",
+  "params_m": 5.526153,
+  "best_epoch": 11,
+  "macro_f1_val": 0.9206273664819835,
+  "top1_val": 0.9414453013424736,
+  "ece_val": 0.01854550155766585,
+  "seconds_per_epoch": 6.87322603034166,
+  "gmac": 1.079389056
+}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{"exp_id": "F01", "seed": 0, "epoch": 1, "train_loss": 1.1058242891619845, "lr": 9.878048780487805e-05, "val_loss": 0.58547219464657, "macro_f1_val": 0.6969748529666905, "top1_val": 0.792630676949443, "seconds": 9.125825970899314}
+{"exp_id": "F01", "seed": 0, "epoch": 2, "train_loss": 0.4833818101664869, "lr": 9.804758750336013e-05, "val_loss": 0.373435123277984, "macro_f1_val": 0.8387187162452264, "top1_val": 0.8728934590117109, "seconds": 8.520142515189946}
+{"exp_id": "F01", "seed": 0, "epoch": 3, "train_loss": 0.34700248235972914, "lr": 9.220332756879578e-05, "val_loss": 0.41976026075971157, "macro_f1_val": 0.8142697795564603, "top1_val": 0.8634675806912311, "seconds": 8.58572681993246}
+{"exp_id": "F01", "seed": 0, "epoch": 4, "train_loss": 0.28856413770557904, "lr": 8.294000502746098e-05, "val_loss": 0.3319367126494399, "macro_f1_val": 0.851907470044788, "top1_val": 0.8908883176235362, "seconds": 8.558021222706884}
+{"exp_id": "F01", "seed": 0, "epoch": 5, "train_loss": 0.22887137785508502, "lr": 7.100807918055428e-05, "val_loss": 0.26389867424862756, "macro_f1_val": 0.8791218549292175, "top1_val": 0.9111682376463868, "seconds": 8.507349716965109}
+{"exp_id": "F01", "seed": 0, "epoch": 6, "train_loss": 0.193460584595436, "lr": 5.737420369829669e-05, "val_loss": 0.23986238391867232, "macro_f1_val": 0.8904660062790418, "top1_val": 0.9160239931448158, "seconds": 8.357873647939414}
+{"exp_id": "F01", "seed": 0, "epoch": 7, "train_loss": 0.14083691003800528, "lr": 4.314291408848116e-05, "val_loss": 0.20959171963500758, "macro_f1_val": 0.9066964103532542, "top1_val": 0.9288774635818338, "seconds": 8.152154556009918}
+{"exp_id": "F01", "seed": 0, "epoch": 8, "train_loss": 0.11901246894877858, "lr": 2.9467144798556745e-05, "val_loss": 0.171514273145239, "macro_f1_val": 0.9277488508966305, "top1_val": 0.945444158811768, "seconds": 8.638317010831088}
+{"exp_id": "F01", "seed": 0, "epoch": 9, "train_loss": 0.09565475252570539, "lr": 1.7454825323461448e-05, "val_loss": 0.18503696280559517, "macro_f1_val": 0.9200261830633697, "top1_val": 0.93887460725507, "seconds": 8.365242775063962}
+{"exp_id": "F01", "seed": 0, "epoch": 10, "train_loss": 0.08005573910592896, "lr": 8.079122347052826e-06, "val_loss": 0.17656091359965087, "macro_f1_val": 0.9270247705933288, "top1_val": 0.9440159954298771, "seconds": 8.207662201020867}
+{"exp_id": "F01", "seed": 0, "epoch": 11, "train_loss": 0.07361358005508054, "lr": 2.0995995650269274e-06, "val_loss": 0.17111946894794966, "macro_f1_val": 0.9283073535518347, "top1_val": 0.945444158811768, "seconds": 7.96911249589175}
+{"exp_id": "F01", "seed": 0, "epoch": 12, "train_loss": 0.0708415739965148, "lr": 1e-09, "val_loss": 0.1742329882599905, "macro_f1_val": 0.9270214143732463, "top1_val": 0.9440159954298771, "seconds": 8.545446759089828}
+Unsupported operator aten::add encountered 25 time(s)
+Unsupported operator aten::scaled_dot_product_attention encountered 12 time(s)
+Unsupported operator aten::gelu encountered 12 time(s)
+The following submodules of the model were never called during the trace of the graph. They may be unused, or they were accessed by direct calls to .forward() or via other python methods. In the latter case they will have zeros for statistics, though their statistics will still contribute to their parent calling module.
+blocks.0.attn.attn_drop, blocks.1.attn.attn_drop, blocks.10.attn.attn_drop, blocks.11.attn.attn_drop, blocks.2.attn.attn_drop, blocks.3.attn.attn_drop, blocks.4.attn.attn_drop, blocks.5.attn.attn_drop, blocks.6.attn.attn_drop, blocks.7.attn.attn_drop, blocks.8.attn.attn_drop, blocks.9.attn.attn_drop
+{
+  "exp_id": "F01",
+  "seed": 0,
+  "backbone": "vit_tiny_patch16_224",
+  "pretrained_tag": "timm/vit_tiny_patch16_224.augreg_in21k_ft_in1k",
+  "params_m": 5.526153,
+  "best_epoch": 11,
+  "macro_f1_val": 0.9283073535518347,
+  "top1_val": 0.945444158811768,
+  "ece_val": 0.01704261419399229,
+  "seconds_per_epoch": 8.461072974295044,
+  "gmac": 1.079389056
+}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{"exp_id": "F01", "seed": 1, "epoch": 1, "train_loss": 1.2404046567474925, "lr": 9.817073170731708e-05, "val_loss": 0.5203195448025265, "macro_f1_val": 0.7532299679877857, "top1_val": 0.81662382176521, "seconds": 9.018927853088826}
+{"exp_id": "F01", "seed": 1, "epoch": 2, "train_loss": 0.47794636902285786, "lr": 9.807160911620484e-05, "val_loss": 0.33945340010071784, "macro_f1_val": 0.8442326376674089, "top1_val": 0.8854612967723507, "seconds": 8.021805664990097}
+{"exp_id": "F01", "seed": 1, "epoch": 3, "train_loss": 0.31508460168431446, "lr": 9.22499554220336e-05, "val_loss": 0.37544992561852447, "macro_f1_val": 0.8275744287380999, "top1_val": 0.8706083976006855, "seconds": 8.143350315280259}
+{"exp_id": "F01", "seed": 1, "epoch": 4, "train_loss": 0.26784851938122656, "lr": 8.30054616097291e-05, "val_loss": 0.26627986233120676, "macro_f1_val": 0.8855825175630201, "top1_val": 0.9114538703227649, "seconds": 8.405116996727884}
+{"exp_id": "F01", "seed": 1, "epoch": 5, "train_loss": 0.23494822027661452, "lr": 7.108706158884265e-05, "val_loss": 0.2797592192658422, "macro_f1_val": 0.8815344194034426, "top1_val": 0.9060268494715795, "seconds": 7.944382386747748}
+{"exp_id": "F01", "seed": 1, "epoch": 6, "train_loss": 0.17995701756373775, "lr": 5.746031324761225e-05, "val_loss": 0.28947097713420883, "macro_f1_val": 0.8761018813467762, "top1_val": 0.9040274207369323, "seconds": 7.9906345163472}
+{"exp_id": "F01", "seed": 1, "epoch": 7, "train_loss": 0.14377433992922306, "lr": 4.322917469525155e-05, "val_loss": 0.27125721648484424, "macro_f1_val": 0.8941199899822865, "top1_val": 0.9160239931448158, "seconds": 8.074203480035067}
+{"exp_id": "F01", "seed": 1, "epoch": 8, "train_loss": 0.11831449323174793, "lr": 2.9546568141433006e-05, "val_loss": 0.21023212192365695, "macro_f1_val": 0.9065190437998764, "top1_val": 0.9300199942873465, "seconds": 8.010824873112142}
+{"exp_id": "F01", "seed": 1, "epoch": 9, "train_loss": 0.09502134745849705, "lr": 1.752097699555258e-05, "val_loss": 0.1763744594130779, "macro_f1_val": 0.9259101596058166, "top1_val": 0.9423021993716081, "seconds": 7.907046312931925}
+{"exp_id": "F01", "seed": 1, "epoch": 10, "train_loss": 0.07416466113588796, "lr": 8.12664313330514e-06, "val_loss": 0.17750377870055478, "macro_f1_val": 0.9254516175661193, "top1_val": 0.9423021993716081, "seconds": 8.02722106128931}
+{"exp_id": "F01", "seed": 1, "epoch": 11, "train_loss": 0.06698242136527126, "lr": 2.1246396139552426e-06, "val_loss": 0.181830409862116, "macro_f1_val": 0.9316131095250751, "top1_val": 0.9465866895172808, "seconds": 8.031131733208895}
+{"exp_id": "F01", "seed": 1, "epoch": 12, "train_loss": 0.0641109329284873, "lr": 1.2130673512744661e-09, "val_loss": 0.183323591181429, "macro_f1_val": 0.929263249694827, "top1_val": 0.9451585261353899, "seconds": 8.339100318029523}
+Unsupported operator aten::add encountered 25 time(s)
+Unsupported operator aten::scaled_dot_product_attention encountered 12 time(s)
+Unsupported operator aten::gelu encountered 12 time(s)
+The following submodules of the model were never called during the trace of the graph. They may be unused, or they were accessed by direct calls to .forward() or via other python methods. In the latter case they will have zeros for statistics, though their statistics will still contribute to their parent calling module.
+blocks.0.attn.attn_drop, blocks.1.attn.attn_drop, blocks.10.attn.attn_drop, blocks.11.attn.attn_drop, blocks.2.attn.attn_drop, blocks.3.attn.attn_drop, blocks.4.attn.attn_drop, blocks.5.attn.attn_drop, blocks.6.attn.attn_drop, blocks.7.attn.attn_drop, blocks.8.attn.attn_drop, blocks.9.attn.attn_drop
+{
+  "exp_id": "F01",
+  "seed": 1,
+  "backbone": "vit_tiny_patch16_224",
+  "pretrained_tag": "timm/vit_tiny_patch16_224.augreg_in21k_ft_in1k",
+  "params_m": 5.526153,
+  "best_epoch": 11,
+  "macro_f1_val": 0.9316131095250751,
+  "top1_val": 0.9465866895172808,
+  "ece_val": 0.01935015550275356,
+  "seconds_per_epoch": 8.159478792649073,
+  "gmac": 1.079389056
+}
+{"exp_id": "F01", "seed": 2, "epoch": 1, "train_loss": 1.1474175620369795, "lr": 9.878048780487805e-05, "val_loss": 0.5462613344124405, "macro_f1_val": 0.7310732947329066, "top1_val": 0.8066266780919737, "seconds": 8.883078736253083}
+{"exp_id": "F01", "seed": 2, "epoch": 2, "train_loss": 0.4983878354655533, "lr": 9.804758750336013e-05, "val_loss": 0.3345761974516408, "macro_f1_val": 0.8517105702362557, "top1_val": 0.890602684947158, "seconds": 8.084581149276346}
+{"exp_id": "F01", "seed": 2, "epoch": 3, "train_loss": 0.3289201548550187, "lr": 9.220332756879578e-05, "val_loss": 0.3156132998636061, "macro_f1_val": 0.859166304833598, "top1_val": 0.8940302770636961, "seconds": 8.109885000158101}
+{"exp_id": "F01", "seed": 2, "epoch": 4, "train_loss": 0.27379735604655453, "lr": 8.294000502746098e-05, "val_loss": 0.2676398127172988, "macro_f1_val": 0.8818324943037165, "top1_val": 0.9108826049700086, "seconds": 8.212359483819455}
+{"exp_id": "F01", "seed": 2, "epoch": 5, "train_loss": 0.22402881899076263, "lr": 7.100807918055428e-05, "val_loss": 0.33080681943103474, "macro_f1_val": 0.8539973516849492, "top1_val": 0.8860325621251071, "seconds": 8.320423091761768}
+{"exp_id": "F01", "seed": 2, "epoch": 6, "train_loss": 0.18142624846773175, "lr": 5.737420369829669e-05, "val_loss": 0.19022153889969465, "macro_f1_val": 0.9157541980288786, "top1_val": 0.9365895458440445, "seconds": 7.9071779190562665}
+{"exp_id": "F01", "seed": 2, "epoch": 7, "train_loss": 0.14516571638878525, "lr": 4.314291408848116e-05, "val_loss": 0.2042582614171236, "macro_f1_val": 0.9106678847609522, "top1_val": 0.930876892316481, "seconds": 8.20230221003294}
+{"exp_id": "F01", "seed": 2, "epoch": 8, "train_loss": 0.11678324630711137, "lr": 2.9467144798556745e-05, "val_loss": 0.19954835916120506, "macro_f1_val": 0.9142536621219917, "top1_val": 0.9357326478149101, "seconds": 7.994807940907776}
+{"exp_id": "F01", "seed": 2, "epoch": 9, "train_loss": 0.09606884507371521, "lr": 1.7454825323461448e-05, "val_loss": 0.17394920823932272, "macro_f1_val": 0.9255078962759211, "top1_val": 0.9425878320479862, "seconds": 8.269045952707529}
+{"exp_id": "F01", "seed": 2, "epoch": 10, "train_loss": 0.07908847256813471, "lr": 8.079122347052826e-06, "val_loss": 0.16750640985421608, "macro_f1_val": 0.926168413940843, "top1_val": 0.943730362753499, "seconds": 8.01558078173548}
+{"exp_id": "F01", "seed": 2, "epoch": 11, "train_loss": 0.06950712196029178, "lr": 2.0995995650269274e-06, "val_loss": 0.1745016845046912, "macro_f1_val": 0.925599256957417, "top1_val": 0.9440159954298771, "seconds": 7.849553257692605}
+{"exp_id": "F01", "seed": 2, "epoch": 12, "train_loss": 0.06840769895465999, "lr": 1e-09, "val_loss": 0.17238058268989845, "macro_f1_val": 0.9273926082738322, "top1_val": 0.9445872607826336, "seconds": 8.29427643166855}
+Unsupported operator aten::add encountered 25 time(s)
+Unsupported operator aten::scaled_dot_product_attention encountered 12 time(s)
+Unsupported operator aten::gelu encountered 12 time(s)
+The following submodules of the model were never called during the trace of the graph. They may be unused, or they were accessed by direct calls to .forward() or via other python methods. In the latter case they will have zeros for statistics, though their statistics will still contribute to their parent calling module.
+blocks.0.attn.attn_drop, blocks.1.attn.attn_drop, blocks.10.attn.attn_drop, blocks.11.attn.attn_drop, blocks.2.attn.attn_drop, blocks.3.attn.attn_drop, blocks.4.attn.attn_drop, blocks.5.attn.attn_drop, blocks.6.attn.attn_drop, blocks.7.attn.attn_drop, blocks.8.attn.attn_drop, blocks.9.attn.attn_drop
+{
+  "exp_id": "F01",
+  "seed": 2,
+  "backbone": "vit_tiny_patch16_224",
+  "pretrained_tag": "timm/vit_tiny_patch16_224.augreg_in21k_ft_in1k",
+  "params_m": 5.526153,
+  "best_epoch": 12,
+  "macro_f1_val": 0.9273926082738322,
+  "top1_val": 0.9445872607826336,
+  "ece_val": 0.013932958555984292,
+  "seconds_per_epoch": 8.178589329589158,
+  "gmac": 1.079389056
+}
+### score (3 seed: [0, 1, 2]; 3507 ảnh)
+
+| Chỉ số | mean ± std |
+|---|---|
+| top-1 accuracy | 0.9393 ± 0.0046 |
+| macro-F1 | 0.9187 ± 0.0061 |
+| balanced accuracy | 0.9171 ± 0.0098 |
+| ECE (15 bin) | 0.0191 ± 0.0050 |
+| NLL | 0.1903 ± 0.0084 |
+
+| Lớp | Precision | Recall | F1 | Số ảnh |
+|---|---|---|---|---|
+| Chinee Apple | 0.894 ± 0.021 | 0.804 ± 0.037 | 0.846 ± 0.014 | 226 |
+| Lantana | 0.896 ± 0.025 | 0.983 ± 0.007 | 0.937 ± 0.013 | 213 |
+| Parkinsonia | 0.976 ± 0.008 | 0.915 ± 0.028 | 0.944 ± 0.014 | 207 |
+| Parthenium | 0.905 ± 0.009 | 0.933 ± 0.012 | 0.919 ± 0.009 | 205 |
+| Prickly Acacia | 0.859 ± 0.026 | 0.886 ± 0.023 | 0.872 ± 0.019 | 213 |
+| Rubber Vine | 0.969 ± 0.001 | 0.924 ± 0.020 | 0.946 ± 0.011 | 202 |
+| Siam Weed | 0.953 ± 0.011 | 0.967 ± 0.005 | 0.960 ± 0.005 | 215 |
+| Snake Weed | 0.885 ± 0.005 | 0.876 ± 0.017 | 0.880 ± 0.007 | 204 |
+| Negatives | 0.961 ± 0.012 | 0.966 ± 0.005 | 0.964 ± 0.004 | 1822 |
+
+Đã lưu kết quả vào /root/K4-Track4-Day2-HaManhTuan-2A202602982-Deeplearning-Advance/lab_output/full/evidence/eval_F00/score_*
+### score (3 seed: [0, 1, 2]; 3507 ảnh)
+
+| Chỉ số | mean ± std |
+|---|---|
+| top-1 accuracy | 0.9484 ± 0.0031 |
+| macro-F1 | 0.9327 ± 0.0029 |
+| balanced accuracy | 0.9238 ± 0.0024 |
+| ECE (15 bin) | 0.0121 ± 0.0018 |
+| NLL | 0.1552 ± 0.0045 |
+
+| Lớp | Precision | Recall | F1 | Số ảnh |
+|---|---|---|---|---|
+| Chinee Apple | 0.944 ± 0.006 | 0.796 ± 0.039 | 0.864 ± 0.021 | 226 |
+| Lantana | 0.939 ± 0.003 | 0.947 ± 0.016 | 0.943 ± 0.006 | 213 |
+| Parkinsonia | 0.974 ± 0.007 | 0.966 ± 0.017 | 0.970 ± 0.008 | 207 |
+| Parthenium | 0.949 ± 0.012 | 0.937 ± 0.010 | 0.943 ± 0.011 | 205 |
+| Prickly Acacia | 0.915 ± 0.009 | 0.909 ± 0.005 | 0.912 ± 0.005 | 213 |
+| Rubber Vine | 0.976 ± 0.014 | 0.931 ± 0.013 | 0.953 ± 0.006 | 202 |
+| Siam Weed | 0.930 ± 0.010 | 0.967 ± 0.000 | 0.948 ± 0.005 | 215 |
+| Snake Weed | 0.910 ± 0.023 | 0.882 ± 0.017 | 0.896 ± 0.011 | 204 |
+| Negatives | 0.954 ± 0.004 | 0.978 ± 0.004 | 0.966 ± 0.004 | 1822 |
+
+Đã lưu kết quả vào /root/K4-Track4-Day2-HaManhTuan-2A202602982-Deeplearning-Advance/lab_output/full/evidence/eval_F01/score_*
+## Tự chấm RUBRIC mục I (đề xuất; giảng viên xác nhận)
+
+| Mã | Tiêu chí | Điểm | Tối đa | Chi tiết |
+|---|---|---|---|---|
+| I1 | Top-1 accuracy test | 5 | 7 | 94.84% (mean 3 seed) |
+| I2 | Macro-F1 cải thiện so với mốc | 5 | 5 | final 0.9327, mốc 0.9187, Δ=+0.0140, s=0.0061 |
+| I3 | Recall hai lớp khó | 1 | 4 | Chinee Apple 79.6% (mốc 88.5%), Snake Weed 88.2% (mốc 88.8%) |
+| I4a | ECE sau TS < ECE trước | 0 | 1 | trước 0.0121, sau 0.0121 |
+| I4b | Chênh macro-F1 val/test <= 0.02 | 1 | 1 | val 0.9317, test 0.9327, chênh 0.0011 |
+| I5 | Cấu hình thời gian thực | 2 | 2 | p95 = 4.5 ms (ngân sách 100 ms), đo đúng cách |
+
+**Tổng các ý đã chấm: 14 / 20** (phần I tối đa 20).
+
+Ngưỡng điểm là TẠM THỜI (xem khối hằng số đầu file eval.py và RUBRIC.md mục I).
+  exp_id  seed method  macro_f1      top1  balanced_acc       ece       nll
+0    F00     0    I00  0.912938  0.934417      0.905770  0.023930  0.198850
+1    F00     1    I00  0.918185  0.939835      0.922782  0.019404  0.189942
+2    F00     2    I00  0.925009  0.943541      0.922739  0.013905  0.182001
+3    F01     0    I01  0.932979  0.949244      0.924105  0.010502  0.152944
+4    F01     1    I01  0.935425  0.950955      0.926053  0.011751  0.152236
+5    F01     2    I01  0.929735  0.944967      0.921227  0.014105  0.160393

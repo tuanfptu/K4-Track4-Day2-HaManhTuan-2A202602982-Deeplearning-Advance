@@ -1,0 +1,22 @@
+{
+  "pipeline": {
+    "model": "mobilenetv3_small_050",
+    "pretrained": false,
+    "classes_in_batch": 9,
+    "batch_size": 9,
+    "initial_loss": 2.0495316982269287,
+    "ln_9": 2.197224577,
+    "final_loss": 1.6291875226670527e-06,
+    "steps": 20,
+    "reached_loss_below_0.05": true,
+    "timing": "retrospective check after the full lab; not a preflight run"
+  },
+  "backbones_measured": [
+    "B01",
+    "B02",
+    "B03",
+    "B04",
+    "B05",
+    "B06"
+  ]
+}

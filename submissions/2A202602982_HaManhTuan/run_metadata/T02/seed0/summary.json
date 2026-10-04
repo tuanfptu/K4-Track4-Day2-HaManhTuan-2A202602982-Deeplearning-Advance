@@ -1,0 +1,13 @@
+{
+  "exp_id": "T02",
+  "seed": 0,
+  "backbone": "vit_tiny_patch16_224",
+  "pretrained_tag": "scratch",
+  "params_m": 5.526153,
+  "best_epoch": 10,
+  "macro_f1_val": 0.6049196096084902,
+  "top1_val": 0.7080834047415024,
+  "ece_val": 0.022034168677546567,
+  "seconds_per_epoch": 7.351691642217338,
+  "gmac": 1.079389056
+}

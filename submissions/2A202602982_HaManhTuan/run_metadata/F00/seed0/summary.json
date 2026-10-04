@@ -1,0 +1,13 @@
+{
+  "exp_id": "F00",
+  "seed": 0,
+  "backbone": "vit_tiny_patch16_224",
+  "pretrained_tag": "timm/vit_tiny_patch16_224.augreg_in21k_ft_in1k",
+  "params_m": 5.526153,
+  "best_epoch": 12,
+  "macro_f1_val": 0.918270992883581,
+  "top1_val": 0.9385889745786918,
+  "ece_val": 0.020168386206086145,
+  "seconds_per_epoch": 6.725306108671551,
+  "gmac": 1.079389056
+}

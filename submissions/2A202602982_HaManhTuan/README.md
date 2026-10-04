@@ -4,7 +4,7 @@
 
 The completed fold-0 server run and B06 supplement are included here: [`results.xlsx`](results.xlsx), [`report.md`](report.md), [`curves/`](curves/), [`predictions/`](predictions/), and [`evidence/`](evidence/). The selected B05 backbone was ViT Tiny. The selected recipe added RandAugment; final inference used two-view probability averaging (I01). Across three seeds, F01 reached test macro-F1 **0.9327 ± 0.0029** and top-1 **0.9484 ± 0.0031**. The F00 macro-F1 baseline was **0.9187 ± 0.0061**. The provided `eval.py` assigned **14/20** in provisional quality criteria. See the report for per-class results, latency, limitations, and the supplemental ResNeXt comparison.
 
-All figures above come from the attached server artifacts. The self-contained Kaggle notebook below was prepared for the earlier Kaggle workflow; the server commands and committed results are the reproduction path for this completed run. The submission does not include model checkpoints or the original `runs/` history files because they were not in the downloaded artifact.
+All figures above come from the attached server artifacts. The self-contained Kaggle notebook below was prepared for the earlier Kaggle workflow; the server commands and committed results are the reproduction path for this completed run. The submission includes per-run configs, histories, and summaries in [`run_metadata/`](run_metadata/) plus the original server logs under [`evidence/`](evidence/). Large model checkpoints are omitted.
 
 ## Run on an RTX 3090 server
 

@@ -1,0 +1,13 @@
+{
+  "exp_id": "B03",
+  "seed": 0,
+  "backbone": "resnet34",
+  "pretrained_tag": "timm/resnet34.a1_in1k",
+  "params_m": 21.289289,
+  "best_epoch": 9,
+  "macro_f1_val": 0.7651253924730567,
+  "top1_val": 0.8309054555841188,
+  "ece_val": 0.012009611626210755,
+  "seconds_per_epoch": 8.701844019442797,
+  "gmac": 3.670755328
+}

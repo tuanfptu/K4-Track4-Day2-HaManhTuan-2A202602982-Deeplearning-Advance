@@ -1,0 +1,28 @@
+B06 config: {'exp_id': 'B06', 'seed': 0, 'fold': 0, 'backbone': 'resnext50_32x4d', 'init': 'finetune', 'drop_rate': 0.0, 'img_size': 224, 'aug': 'basic', 'sampler': None, 'mix': None, 'mix_alpha': 1.0, 'loss': 'ce', 'label_smoothing': 0.0, 'focal_gamma': 2.0, 'class_weight_beta': None, 'epochs': 10, 'batch_size': 64, 'lr_backbone': 0.0001, 'lr_head': 0.001, 'weight_decay': 0.05, 'warmup_epochs': 1.0, 'ema_decay': None, 'amp': True, 'num_workers': 4, 'images_dir': '/root/K4-Track4-Day2-HaManhTuan-2A202602982-Deeplearning-Advance/data/images', 'labels_dir': '/root/K4-Track4-Day2-HaManhTuan-2A202602982-Deeplearning-Advance/data/labels', 'out_dir': '/root/K4-Track4-Day2-HaManhTuan-2A202602982-Deeplearning-Advance/lab_output/full/runs', 'pred_dir': '/root/K4-Track4-Day2-HaManhTuan-2A202602982-Deeplearning-Advance/lab_output/full/predictions', 'save_test_predictions': False, 'max_train_batches': None, 'max_val_batches': None, 'use_two_gpus': True, 'fast_mode': True}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{"exp_id": "B06", "seed": 0, "epoch": 1, "train_loss": 1.596156746149063, "lr": 9.878048780487805e-05, "val_loss": 1.3740247238434848, "macro_f1_val": 0.20564392275348956, "top1_val": 0.5338474721508141, "seconds": 17.97626319574192}
+{"exp_id": "B06", "seed": 0, "epoch": 2, "train_loss": 0.6630647723994604, "lr": 9.709286838710774e-05, "val_loss": 0.7023279943727692, "macro_f1_val": 0.6753847999758266, "top1_val": 0.763781776635247, "seconds": 15.661011558957398}
+{"exp_id": "B06", "seed": 0, "epoch": 3, "train_loss": 0.38122442282918023, "lr": 8.850666114421079e-05, "val_loss": 0.7446381878049263, "macro_f1_val": 0.65427623427437, "top1_val": 0.7475007140816909, "seconds": 15.697140580043197}
+{"exp_id": "B06", "seed": 0, "epoch": 4, "train_loss": 0.25296990905047917, "lr": 7.527598226952894e-05, "val_loss": 0.5929205187284343, "macro_f1_val": 0.7423766248420915, "top1_val": 0.8077692087974865, "seconds": 15.854166339151561}
+{"exp_id": "B06", "seed": 0, "epoch": 5, "train_loss": 0.199485163090796, "lr": 5.899664689937283e-05, "val_loss": 0.4859665044799119, "macro_f1_val": 0.7866242092118537, "top1_val": 0.8354755784061697, "seconds": 15.83379171602428}
+{"exp_id": "B06", "seed": 0, "epoch": 6, "train_loss": 0.1592436310857898, "lr": 4.1632183136785194e-05, "val_loss": 0.5637644413572419, "macro_f1_val": 0.7676024064848076, "top1_val": 0.8186232504998572, "seconds": 15.839549550786614}
+{"exp_id": "B06", "seed": 0, "epoch": 7, "train_loss": 0.14104631800976833, "lr": 2.527700158372548e-05, "val_loss": 0.6199054512525415, "macro_f1_val": 0.7508318228525942, "top1_val": 0.8029134532990574, "seconds": 15.874261339660734}
+{"exp_id": "B06", "seed": 0, "epoch": 8, "train_loss": 0.12428018057764303, "lr": 1.1903778512265102e-05, "val_loss": 0.5818655441332394, "macro_f1_val": 0.7717161362371534, "top1_val": 0.8206226792345044, "seconds": 15.913321333937347}
+{"exp_id": "B06", "seed": 0, "epoch": 9, "train_loss": 0.11327011840099968, "lr": 3.1255219925744096e-06, "val_loss": 0.5453086254069616, "macro_f1_val": 0.7805453226911814, "top1_val": 0.8271922307912025, "seconds": 15.761199768166989}
+{"exp_id": "B06", "seed": 0, "epoch": 10, "train_loss": 0.1134879207011403, "lr": 1.0193141965486596e-09, "val_loss": 0.5550295603816695, "macro_f1_val": 0.7804619964424524, "top1_val": 0.8277634961439588, "seconds": 15.840324155986309}
+Unsupported operator aten::max_pool2d encountered 1 time(s)
+Unsupported operator aten::add_ encountered 16 time(s)
+{
+  "exp_id": "B06",
+  "seed": 0,
+  "backbone": "resnext50_32x4d",
+  "pretrained_tag": "timm/resnext50_32x4d.a1h_in1k",
+  "params_m": 22.998345,
+  "best_epoch": 5,
+  "macro_f1_val": 0.7866242092118537,
+  "top1_val": 0.8354755784061697,
+  "ece_val": 0.04599375297974875,
+  "seconds_per_epoch": 16.025102953845636,
+  "gmac": 4.25735168
+}
+B06 complete. Original final test predictions unchanged.
