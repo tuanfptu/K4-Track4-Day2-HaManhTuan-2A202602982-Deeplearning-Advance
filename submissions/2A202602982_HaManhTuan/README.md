@@ -1,4 +1,4 @@
-# DeepWeeds — Lab Day 2 — 2A202602982 Hà Mạnh Tuấn
+# DeepWeeds — Lab Day 2 — 2A202602982 Hà Mạnh Tuân
 
 ## Kết quả đã đo
 

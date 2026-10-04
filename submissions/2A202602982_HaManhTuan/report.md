@@ -1,5 +1,7 @@
 # DeepWeeds Lab Day 2
 
+**Student:** Hà Mạnh Tuân · **ID:** 2A202602982
+
 ## Executive summary
 
 On the original DeepWeeds fold 0, six backbones were compared on validation, three training axes were tested on the selected ViT Tiny, and five inference methods were compared before final test evaluation. The final recipe used pretrained ViT Tiny, RandAugment and two-view probability averaging. Across three seeds, its test macro-F1 was **0.9327 ± 0.0029** and top-1 accuracy was **94.84% ± 0.31 percentage points**. Macro-F1 exceeded the same-backbone baseline by **0.0140**, greater than the larger observed seed standard deviation (**0.0061**). The selected inference method had batch-1 p95 latency **9.17 ms** on an RTX 3090, excluding preprocessing. The supplied evaluation script assigned **14/20 provisional model-quality points**. The remaining weakness is Chinee Apple recall (**79.6%**). B06 was measured after final selection to complete the required ResNeXt comparison; it did not change the final model or test predictions.
