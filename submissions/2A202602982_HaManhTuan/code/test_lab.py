@@ -38,6 +38,7 @@ class LabTests(unittest.TestCase):
             package_submission.package(output, submission)
             self.assertTrue((submission / "predictions/B06_seed0_val.csv").is_file())
             self.assertFalse((submission / "runs/B06/seed0/best.pt").exists())
+            self.assertTrue((submission / "run_metadata/B06/seed0").is_dir())
 
     def test_original_split_and_image_files(self):
         data = Path(os.environ.get("DEEPWEEDS_DATA", "/workspace/data"))

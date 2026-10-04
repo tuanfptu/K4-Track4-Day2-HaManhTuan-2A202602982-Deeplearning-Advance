@@ -13,6 +13,13 @@ def package(output, submission):
         shutil.copy2(output / name, submission / name)
     for name in ("curves", "predictions", "evidence"):
         shutil.copytree(output / name, submission / name, dirs_exist_ok=True)
+    # Keep small per-run provenance without shipping large model checkpoints.
+    for run in (output / "runs").glob("*/seed*"):
+        target = submission / "run_metadata" / run.relative_to(output / "runs")
+        target.mkdir(parents=True, exist_ok=True)
+        for name in ("config.json", "summary.json", "history.csv", "split_check.json"):
+            if (run / name).is_file():
+                shutil.copy2(run / name, target / name)
     print(f"Submission artifacts copied to {submission}")
 
 

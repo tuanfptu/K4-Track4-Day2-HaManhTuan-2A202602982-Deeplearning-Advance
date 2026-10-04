@@ -1,0 +1,14 @@
+{
+  "p50": 5.234399577602744,
+  "p95": 5.440543801523745,
+  "p99": 5.4943379713222384,
+  "mean": 5.27502853423357,
+  "n": 50,
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "dtype": "fp32",
+  "batch": 1,
+  "img_size": 224,
+  "images_per_s": 191.0438790876529,
+  "torch": "2.6.0+cu124",
+  "preprocessing_included": false
+}

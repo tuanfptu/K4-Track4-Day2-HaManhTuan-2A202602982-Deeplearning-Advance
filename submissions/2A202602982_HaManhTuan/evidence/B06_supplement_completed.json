@@ -1,0 +1,31 @@
+{
+  "exp_id": "B06",
+  "summary": {
+    "exp_id": "B06",
+    "seed": 0,
+    "backbone": "resnext50_32x4d",
+    "pretrained_tag": "timm/resnext50_32x4d.a1h_in1k",
+    "params_m": 22.998345,
+    "best_epoch": 5,
+    "macro_f1_val": 0.7866242092118537,
+    "top1_val": 0.8354755784061697,
+    "ece_val": 0.04599375297974875,
+    "seconds_per_epoch": 16.025102953845636,
+    "gmac": 4.25735168
+  },
+  "latency": {
+    "p50": 5.234399577602744,
+    "p95": 5.440543801523745,
+    "p99": 5.4943379713222384,
+    "mean": 5.27502853423357,
+    "n": 50,
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "dtype": "fp32",
+    "batch": 1,
+    "img_size": 224,
+    "images_per_s": 191.0438790876529,
+    "torch": "2.6.0+cu124",
+    "preprocessing_included": false
+  },
+  "final_test_unchanged": true
+}

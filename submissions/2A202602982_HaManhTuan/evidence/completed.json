@@ -1,0 +1,14 @@
+{
+  "selected_backbone": "vit_tiny_patch16_224",
+  "selected_recipe": {
+    "aug": "randaug"
+  },
+  "selected_inference": "I01",
+  "gpu": {
+    "count": 1,
+    "names": [
+      "NVIDIA GeForce RTX 3090"
+    ],
+    "torch": "2.6.0+cu124"
+  }
+}

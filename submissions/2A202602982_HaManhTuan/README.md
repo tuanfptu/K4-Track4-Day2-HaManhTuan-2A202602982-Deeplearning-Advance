@@ -1,5 +1,11 @@
 # DeepWeeds Lab Day 2
 
+## Measured RTX 3090 results
+
+The completed fold-0 server run and B06 supplement are included here: [`results.xlsx`](results.xlsx), [`report.md`](report.md), [`curves/`](curves/), [`predictions/`](predictions/), and [`evidence/`](evidence/). The selected B05 backbone was ViT Tiny. The selected recipe added RandAugment; final inference used two-view probability averaging (I01). Across three seeds, F01 reached test macro-F1 **0.9327 ± 0.0029** and top-1 **0.9484 ± 0.0031**. The F00 macro-F1 baseline was **0.9187 ± 0.0061**. The provided `eval.py` assigned **14/20** in provisional quality criteria. See the report for per-class results, latency, limitations, and the supplemental ResNeXt comparison.
+
+All figures above come from the attached server artifacts. The self-contained Kaggle notebook below was prepared for the earlier Kaggle workflow; the server commands and committed results are the reproduction path for this completed run. The submission does not include model checkpoints or the original `runs/` history files because they were not in the downloaded artifact.
+
 ## Run on an RTX 3090 server
 
 Use a server image with a working NVIDIA driver, Python 3 and CUDA-enabled PyTorch. From the repository root:
@@ -42,7 +48,7 @@ The backbone and recipe screening runs use 10 epochs each; final and baseline se
 
 The notebook's full GPU run has **not been executed in this workspace**. Only local CPU smoke validation is available here. Do not treat the generated report or workbook as measured results until the Kaggle job finishes and `evidence/completed.json` exists.
 
-If a Kaggle run ends before completion, add its `deepweeds_evidence.zip` as an Input to a new notebook version. Kaggle may expose it as a zip or as an extracted folder; the notebook supports both. It restores completed checkpoints, logs, curves and validation predictions, then skips runs whose saved configs match. Kaggle reported that the first ConvNeXt-Tiny attempt exceeded available memory after two epochs. The retry uses five lighter backbones (`resnet50`, `resnet18`, `efficientnet_b0`, `mobilenetv3_large_100`, `vit_tiny_patch16_224`), runs each experiment in a separate process, and avoids DataLoader worker processes after `B01` to reduce memory use. The batch size and epoch budgets are unchanged. An incomplete run must not be reported as a finished result.
+If a Kaggle run ends before completion, add its `deepweeds_evidence.zip` as an Input to a new notebook version. Kaggle may expose it as a zip or as an extracted folder; the notebook supports both. It restores completed checkpoints, logs, curves and validation predictions, then skips runs whose saved configs match. The current base lineup is ResNet-50/18/34, RegNetX-002, and ViT Tiny; the server supplement adds ResNeXt-50 as B06. The Kaggle notebook is an earlier alternative workflow and has not been used to generate the committed measured results.
 
 Source files live in [`code/`](code/). Rebuild the self-contained notebook after source edits with:
 
