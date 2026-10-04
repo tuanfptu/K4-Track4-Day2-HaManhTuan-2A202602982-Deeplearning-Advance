@@ -21,6 +21,19 @@ The CUDA wheel command is for Linux and a compatible NVIDIA driver. If the renta
 
 On a single RTX 3090, `run_server.sh` enables a speed setting by default: four persistent image-loading workers, cuDNN kernel benchmarking, and fast float32 matrix operations. Mixed precision is already enabled. Set `DEEPWEEDS_WORKERS=8` to try more workers if the GPU is idle, or `DEEPWEEDS_FAST=0` for the previous deterministic behavior. Different speed settings are recorded in each run's config; use a new output directory when changing settings after a run starts. Training time still depends on storage speed and model choice.
 
+### Complete the backbone comparison after the first server run
+
+The first completed run compared B01–B05. The rubric additionally requires ResNeXt or ConvNeXt. B06 trains ResNeXt-50 with the saved B01 setup on the same fold and seed. It updates the Backbones and Summary sheets, appends the measured comparison to the report, saves a latency result, and generates validation confusion and error images. It leaves F00/F01 test predictions unchanged. Run after `lab_output/full/evidence/completed.json` exists:
+
+```bash
+source .venv/bin/activate
+python submissions/2A202602982_HaManhTuan/code/supplement_backbone.py --output lab_output/full 2>&1 | tee supplement.log
+python submissions/2A202602982_HaManhTuan/code/package_submission.py \
+  --output lab_output/full --submission submissions/2A202602982_HaManhTuan
+```
+
+`evidence/B06_supplement_completed.json` confirms the added comparison. The final model selection was frozen before B06 and must be described as such. Do not claim a new F01 score from B06; the F01 test predictions are those already measured. `package_submission.py` copies the measured workbook, report, plots, predictions and evidence into the submission folder without copying dataset images or model checkpoints.
+
 Run [`deepweeds_kaggle_t4x2.ipynb`](deepweeds_kaggle_t4x2.ipynb) as a new Kaggle Notebook. Select **GPU T4 x2**, enable **Internet**, then choose **Save & Run All**. The notebook is self-contained: it writes the completed Python modules and the repository's original `eval.py`, downloads the original fold-0 CSV files and images, verifies the image MD5, runs unit and smoke checks, then starts the full experiment sequence.
 
 The full sequence screens five backbones, evaluates initialization/augmentation/loss choices against one baseline, trains the selected recipe and baseline with three seeds each, compares validation inference methods, and evaluates test once the method is selected. It writes `results.xlsx`, `report.md`, `curves/`, `predictions/`, `runs/`, and `evidence/` under `/kaggle/working/lab_output`. The final cell creates `/kaggle/working/deepweeds_evidence.zip`. Kaggle keeps these files under the notebook version's **Output** tab after Save & Run All completes. Download the zip from there to keep a local copy.

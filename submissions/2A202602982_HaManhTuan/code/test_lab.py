@@ -17,10 +17,28 @@ import inference
 import losses
 import model
 import run_lab
+import package_submission
 import train
 
 
 class LabTests(unittest.TestCase):
+    def test_package_requires_completed_supplement_and_excludes_checkpoints(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            output, submission = Path(tmp) / "output", Path(tmp) / "submission"
+            submission.mkdir()
+            for name in ("evidence/completed.json", "results.xlsx", "report.md",
+                         "curves/B06_seed0.png", "predictions/B06_seed0_val.csv",
+                         "runs/B06/seed0/best.pt"):
+                target = output / name
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_text(name)
+            with self.assertRaises(FileNotFoundError):
+                package_submission.package(output, submission)
+            (output / "evidence/B06_supplement_completed.json").write_text("{}")
+            package_submission.package(output, submission)
+            self.assertTrue((submission / "predictions/B06_seed0_val.csv").is_file())
+            self.assertFalse((submission / "runs/B06/seed0/best.pt").exists())
+
     def test_original_split_and_image_files(self):
         data = Path(os.environ.get("DEEPWEEDS_DATA", "/workspace/data"))
         if not data.exists():
